@@ -24,6 +24,7 @@ your request
 using-design-skills ── loaded at session start; routes the request to the right skill
    │
    ├─ no DESIGN.md? ──▶ design-setup ── interview, one question at a time ─▶ DESIGN.md ─▶ foundations
+   │                        └─ design system already in code? ─▶ design-system-sync (import) ─▶ guide in your tool
    │
    ▼
 design  (/design)
@@ -49,9 +50,20 @@ Each skill also starts on its own when you ask for it directly: "give me options
 | `screen-states` | designing a screen; "what states are missing?" | Every state in writing (data, system, activity, people, interaction) with messy realistic data, drawn and named |
 | `three-proposals` | "options", "alternatives", "I don't like it" | Three directions that really differ (structure, interaction, density, emphasis, removal; never just a new colour scheme), next to the current design, recommendation first |
 | `design-system` | tokens, the style guide, a new component, "audit" | Role-named tokens, interaction rules defined once, a states matrix per component, a component index, and changes listed with the screens they affect before they spread. Audits report and never fix on their own |
+| `design-system-sync` | a design system already in code; "bring our components into Paper"; "apply the guide changes to the code" | **Import:** inventory of tokens and components, then you pick what to draw; tokens keep their code names; a component index marks what's drawn or only in code. **Export:** a diff of what changed in the tool since the last sync (asking when both sides changed), applied only after your OK, with your project's checks run |
 | `design-critique` | "review", "refine", "make it better", and before showing any design | Render it and look, check hierarchy, space, layout shift, interaction feel, contrast, text, consistency and motion, and rank by impact. Review mode changes nothing |
 
 In Claude Code, skills are also slash commands: `/design-skills:design`, `/design-skills:design-setup`, and so on.
+
+## Already have a design system in code?
+
+If your repo has a UI package, token files or a component library, setup notices it and offers to bring it into your design tool instead of inventing a new one:
+1. It shows an inventory.
+2. You pick which components to draw now.
+3. Your tool's tokens keep the code's names.
+4. When a screen later needs a component that is still only in code, `/design` imports just that one first.
+
+Changes you make to the guide in the tool go back as a reviewed diff ("apply the guide changes to the code"), measured against the last sync's commit. When both sides changed, it asks which one wins.
 
 ## `DESIGN.md`
 
@@ -100,6 +112,7 @@ First look whether DESIGN.md exists at the project root.
 - "Options", "alternatives", "I don't like it" → three-proposals
 - "Review", "refine", "make it better", or before showing your own design → design-critique
 - Tokens, style guide, a component, "audit" → design-system
+- "Bring our design system into <tool>", "apply the guide changes to the code" → design-system-sync
 - "What states are missing?" → screen-states
 Small edits the person described exactly (one value, label or size): just make them.
 A stop means ending your turn with the question. Never decide a stop for the person.

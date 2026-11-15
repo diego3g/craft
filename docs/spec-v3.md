@@ -1,6 +1,6 @@
 # design-skills v3: sync a design system between code and the design tool
 
-Date: 2026-11-15 · Status: design approved in conversation; spec awaiting review.
+Date: 2026-11-15 · Status: approved.
 Amends `spec-v2.md`. Everything in v2 not changed here still holds.
 
 ## Problem

@@ -20,3 +20,16 @@
 | | 2: "States approved. Draw only the default and error boards." | **design-system-sync imported just Input first** (values read from `Input.tsx`, focus noted as missing in code), the index row flipped to "drawn", then boards drawn, self-check ran, decisions logged ✓ |
 
 Regressions: "pricing page" with an empty folder → design-setup ✓; with a bakery DESIGN.md → design ✓; "2px taller" → a direct edit of the shared `.btn` ✓.
+
+## Paper pass
+
+Fieldnote repo, new scratch Paper file, the full plugin plus only the Paper MCP. Prompt: "Bring our design system into Paper, in the file 'design-skills sync test' … on a page you create named 'Guide'."
+- **Turn 1:** inventory in the reference format, then "you need to choose which components to draw first". Nothing drawn ✓
+- **Turn 2:** "Draw Button and Badge."
+  - `get_tokens` → `create_tokens`: **all 22 tokens registered under the code's names and values** (verified with `get_tokens` afterwards: an exact match, `--sand-200` and `--sand-400` included);
+  - five boards (Foundations · Colour, Foundations · Type & scales, Component index, Button, Badge) built with `write_html`, 8 screenshots, `finish_working_on_nodes`;
+  - missing states dashed and labelled "proposed";
+  - Input "in code only";
+  - DESIGN.md records the source;
+  - stated that the components weren't compared with the real ones (no Storybook) and that the folder isn't a git repo, so a later export has no base commit ✓
+- Cost about US$2.2.
