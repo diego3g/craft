@@ -74,3 +74,19 @@ Adapters: Paper (`get_tokens`/`create_tokens`/`set_tokens`, the guide page, comp
 - **On-demand import.** A `design` run where the screen needs the component that's `in code only`: it imports that one first.
 - **Paper pass.** One import run against a scratch Paper file; never an existing one.
 - **Regressions:** `npm test` and `npm run check`; workflow runs 1, 2b and 3 from v2 still route the same.
+
+## Amendment after the v3 review (2026-11-15)
+
+- **`design-sync.json` replaces the git-commit base.** It sits at the project root and records the source, the tool, the naming rule, the date, the token values **both sides agreed on** at the last sync, and each component's status.
+  - A full import writes it.
+  - A one-component import changes only that component's status.
+  - An export updates the agreed values.
+  - Without the file, an export lists every difference and asks the direction for each.
+
+  Git is no longer needed. The "no mapping file" rule stands: this is a record of agreed values, not a name mapping.
+- **Naming rule:** CSS names as written; otherwise the CSS name the system emits; otherwise the full key path joined with `-`. Types the tool can't hold are listed on the guide as "not registered".
+- **Generated token files:** export edits the source input, never the build output.
+- **Existing tool tokens with other values** are conflicts at the inventory stop, never overwritten silently.
+- **A sync-only `DESIGN.md`** (no Product section) is treated as missing by `design`, so setup still runs.
+- **Declining the import** is logged. `design` then asks once before importing a component, and otherwise builds from the code's values on the board.
+- **`design` with a guide that differs from code** classifies by `design-sync.json` (code changed → refresh the guide; guide changed → a pending export), instead of calling the guide stale.

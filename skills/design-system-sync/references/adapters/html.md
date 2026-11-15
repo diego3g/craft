@@ -2,7 +2,7 @@
 
 | Skill verb | In HTML |
 |---|---|
-| Register tokens (import) | `guide/tokens.css` = a copy of the code's token file with the same names (or `@import` it when the guide should always follow the code). Changes made "in the guide" are edits to `guide/tokens.css` |
+| Register tokens (import) | `guide/tokens.css` = the code's tokens as CSS custom properties under the naming rule (copied from a CSS source, or written out from Tailwind, JSON or theme objects). Changes made "in the guide" are edits to `guide/tokens.css`; never `@import` the code's file, or the guide can't hold a change of its own |
 | Guide page | `guide/index.html` (component index and links), `guide/foundations.html`, `guide/<component>.html` |
 | Draw a component | Its page: a legend from the guidelines, examples, and a states matrix built with the code's own styles; "proposed" states labelled |
 | Read guide values (export) | `guide/tokens.css` and the component pages' CSS, by name |

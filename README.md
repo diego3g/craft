@@ -63,11 +63,11 @@ If your repo has a UI package, token files or a component library, setup notices
 3. Your tool's tokens keep the code's names.
 4. When a screen later needs a component that is still only in code, `/design` imports just that one first.
 
-Changes you make to the guide in the tool go back as a reviewed diff ("apply the guide changes to the code"), measured against the last sync's commit. When both sides changed, it asks which one wins.
+Changes you make to the guide in the tool go back as a reviewed diff ("apply the guide changes to the code"). A small `design-sync.json` at the project root remembers the last values both sides agreed on, so it can tell your guide changes from changes in the code, with or without git. When both sides changed, it asks which one wins.
 
 ## `DESIGN.md`
 
-`design-setup` writes it and every other skill reads it first. It has eight short sections: Product, Audience and voice, Mood (words and "never like"), Brand, References (take / avoid), Constraints, a dated **Decisions log** and **Open questions**. It's how a design decision made on Monday survives into Thursday's session.
+`design-setup` writes it (`design-system-sync` adds the design system's source to it) and every other skill reads it first. It has eight short sections: Product, Audience and voice, Mood (words and "never like"), Brand, References (take / avoid), Constraints, a dated **Decisions log** and **Open questions**. It's how a design decision made on Monday survives into Thursday's session.
 
 ## Your project wins
 
@@ -125,7 +125,7 @@ Every skill was written test-first:
 - **With the skill:** the skill was written against those failures, and the same scenarios ran again with the skill installed but never named, so the description also had to trigger it.
 - **Workflow runs:** with the whole plugin loaded, a few prompts check that each request reaches the right skill and that small edits stay small.
 
-The records are in [`tests/scenarios/`](tests/scenarios/). The HTML adapter ran with real renders (headless Chrome), and the Paper adapters of the four original skills (`screen-states`, `three-proposals`, `design-system`, `design-critique`) ran against the Paper MCP; the `design` and `design-setup` Paper adapters haven't run yet. **The Figma adapter hasn't been tested yet**: reports and fixes are welcome.
+The records are in [`tests/scenarios/`](tests/scenarios/). The HTML adapter ran with real renders (headless Chrome), and the Paper adapters of the four original skills (`screen-states`, `three-proposals`, `design-system`, `design-critique`) ran against the Paper MCP; the `design` and `design-setup` Paper adapters haven't run yet. `design-system-sync`'s import ran in HTML and in Paper; its export ran in HTML only. **The Figma adapter hasn't been tested yet**: reports and fixes are welcome.
 
 ## Credits
 

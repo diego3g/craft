@@ -3,7 +3,7 @@
 | Skill verb | In Paper |
 |---|---|
 | Start | `get_guide({topic: "paper-mcp-instructions"})` once per session, then `get_basic_info` (pages, tokens, fonts) |
-| Register tokens (import) | `get_tokens` first, so you don't duplicate existing ones; then `create_tokens` with the **code's names** (`--color-accent`, `--sand-200`), and `set_tokens` for ones that exist with other values |
+| Register tokens (import) | `get_tokens` first. A name that already exists **with a different value is a conflict** for the inventory stop, never a silent `set_tokens`. Then `create_tokens` with the code's names (`--color-accent`, `--sand-200`); after the person settles a conflict, `set_tokens` for it. Paper names must match `--[A-Za-z0-9_-]+`. Types Paper can't hold (shadows, durations, easings) go on the foundations board as text, marked "not registered in Paper" |
 | Guide page | `create_page` "Guide"; artboards `Guide · Foundations · Colour`, `Guide · Foundations · Type & scales`, `Guide · Component index`, `Guide · <Component>`; content with `write_html` in small groups, every value through `var(--token)` |
 | Component index | One bordered table artboard: name, variants, code path, status (`drawn` / `in code only`) |
 | Draw a component | One artboard per component: a legend (its guideline text), examples, and a states matrix; "proposed" states labelled as such |

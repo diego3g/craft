@@ -30,16 +30,17 @@ A **stop** means: end your turn with the question and wait. You can always do th
 ## Steps
 
 1. **Context.**
-   - Read `DESIGN.md` at the project root. **If it's missing → REQUIRED SUB-SKILL: `design-setup`**, then come back here.
+   - Read `DESIGN.md` at the project root. **If it's missing, or has no Product section** (a sync-only record) → **REQUIRED SUB-SKILL: `design-setup`**, then come back here.
    - Read the design system (tokens, components, guide) and the screens related to this one.
    - **When the brief and the code disagree** (the brief says teal, the tokens say blue): follow the **code**, say so in one line, add the conflict to `DESIGN.md` › Open questions, and offer to update whichever is wrong. Never override tokens inside a page's own CSS.
+   - **When the design tool's guide and the code differ** and a `design-sync.json` exists, don't call the guide stale. Classify with it: **code changed** → offer to refresh the guide before drawing; **guide changed** → it's the person's change waiting for an export, so draw with it and mention the pending export.
 2. **Scope in words.** List each page or element to make, each with its job and its one next action.
    - Ambiguous words get one interpretation stated plainly ("pricing page = the bakery's price list, not subscription plans").
    - **Stop and confirm the list** when there's more than one item or the request is vague. One clear item: go on.
 3. **For each item, in order:**
    1. **REQUIRED SUB-SKILL: `screen-states`.** Its written state list and its stop come first.
    2. **Open direction?** Only when the person asked for ideas, or when two structurally different layouts are plausible and neither the brief nor the system chooses between them → **REQUIRED SUB-SKILL: `three-proposals`** before drawing the states. For several pages, ask at the scope stop which page (if any) gets options; never run an option round per page by default. The states are then drawn in the picked direction. A screen that follows an existing pattern goes straight to drawing.
-   3. **Draw** the main state, then the other states, **using only the system's pieces and tokens**. Something new (a component, a colour, a size the scale doesn't have) → **REQUIRED SUB-SKILL: `design-system`** (add mode) before using it. A component that **exists in code but isn't drawn in the tool** ("in code only" in the index, or no guide yet) → **REQUIRED SUB-SKILL: `design-system-sync`**, importing just that component first. Never draw a look-alike, and never hard-code a new value in a page.
+   3. **Draw** the main state, then the other states, **using only the system's pieces and tokens**. Something new (a component, a colour, a size the scale doesn't have) → **REQUIRED SUB-SKILL: `design-system`** (add mode) before using it. A component that **exists in code but isn't drawn in the tool** ("in code only" in the index) → **REQUIRED SUB-SKILL: `design-system-sync`** (import of one component), drawing just that component first. If the person declined the import (see `DESIGN.md`), ask once before importing; if they still say no, build from the code's values on the board itself and note it. Never draw a look-alike, and never hard-code a new value in a page.
    4. **REQUIRED SUB-SKILL: `design-critique` in self-check mode** on every board: render it, fix what it finds within this task's scope, and render again.
 4. **Close.**
    - Show the result with the summary below.

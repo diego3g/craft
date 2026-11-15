@@ -37,7 +37,7 @@ A reusable piece for the system ("we need a date picker component") goes to `des
 ## Priority
 
 1. `design-setup` before `design` when there is no `DESIGN.md`. Reviews, options for an existing screen, audits and state questions don't need a brief: they work from what's already there.
-2. `design` before its sub-skills: it calls `screen-states`, `three-proposals`, `design-system` and `design-critique` at the right moment, so don't start them yourself in the middle of a `design` run.
+2. `design` before its sub-skills: it calls `screen-states`, `three-proposals`, `design-system`, `design-system-sync` and `design-critique` at the right moment, so don't start them yourself in the middle of a `design` run.
 3. `design-critique` is the last step before you show anything you made.
 
 ## Small edits: no process

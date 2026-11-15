@@ -21,7 +21,7 @@ Before the first screen, agree on what the product is, who it's for, how it shou
 
 ## Steps
 
-1. **Read first.** README, docs, existing CSS or tokens, the design file, brand folders, any old `DESIGN.md` draft. Write down what they already answer. **If the code already has a design system** (a UI package, token files, a component library), say so with counts. In step 6, offer to import it into the design tool instead of creating foundations; the brand questions it answers are skipped. **Never ask a question these files answer.** Confirm it in one line instead ("Your README says pt-BR only and members over 60, so I'll design for 18px text and 48px taps").
+1. **Read first.** README, docs, existing CSS or tokens, the design file, brand folders, any old `DESIGN.md` draft. Write down what they already answer. **If the code already has a design system** (a UI package, token files, a component library), say so with counts, and write "Design system source: `<path>`" into the brief's Brand section. In step 6, offer to import it into the design tool instead of creating foundations; the brand questions it answers are skipped. **Two UI packages** → ask which is the source before skipping any brand question. **Never ask a question these files answer.** Confirm it in one line instead ("Your README says pt-BR only and members over 60, so I'll design for 18px text and 48px taps").
 2. **Interview, one question per message.** Follow [the interview](references/interview.md) in its order: product, audience and voice, mood, brand, references, constraints.
    - Offer 3–5 options plus "something else" whenever you can.
    - Skip any question already answered.
@@ -32,7 +32,7 @@ Before the first screen, agree on what the product is, who it's for, how it shou
    - Anything you inferred and they didn't confirm goes under Open questions, not into the brief as fact.
 5. **Stop and show the person `DESIGN.md`.** Change it until they approve it.
 6. **Foundations.**
-   - **Design system already in code:** offer the import. On yes, **REQUIRED SUB-SKILL:** `design-system-sync` (import). It shows an inventory and asks which components to draw. Offer it even after "skip": it's about the design tool, not the brief.
+   - **Design system already in code:** offer the import. On yes, **REQUIRED SUB-SKILL:** `design-system-sync` (import). It shows an inventory and asks which components to draw. On no, log "<date> — Import into <tool> declined" in the Decisions log. Offer it even after "skip": it's about the design tool, not the brief.
    - **No system in code:** **REQUIRED SUB-SKILL:** `design-system` in create mode for the foundations (tokens, type, spacing, interaction rules). It has its own approval stop.
    - Existing tokens and styles are the starting point: extend them, don't rename or move them without asking.
 
@@ -67,7 +67,7 @@ Then continue with the task they asked for.
 
 ## Done when
 
-`DESIGN.md` is approved with its eight sections, and the foundations are approved through `design-system`. After a "skip": `DESIGN.md` is written with its assumptions marked, the foundations exist (approved, or already in the project), and the original task has continued.
+`DESIGN.md` is approved with its eight sections, and the foundations are settled: created and approved through `design-system`, or (with a system in code) imported through `design-system-sync` or the import declined and logged. After a "skip": `DESIGN.md` is written with its assumptions marked, the foundations exist (approved, or already in the project), and the original task has continued.
 
 ## Common mistakes
 

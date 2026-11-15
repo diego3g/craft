@@ -33,3 +33,21 @@ Fieldnote repo, new scratch Paper file, the full plugin plus only the Paper MCP.
   - DESIGN.md records the source;
   - stated that the components weren't compared with the real ones (no Storybook) and that the folder isn't a git repo, so a later export has no base commit ✓
 - Cost about US$2.2.
+
+## Fix pass after the v3 review: `design-sync.json` replaces the git-commit base
+
+The reviewer replayed the old rules on the recorded runs: a one-component import moved the commit base and turned a both-changed radius into a "clean" guide change; there was no base after an export or without git. The base is now `design-sync.json` (the values both sides agreed on).
+
+**End-to-end chain, no git, a single session:**
+
+| Turn | Prompt / action | Result |
+|---|---|---|
+| 1 | "Bring our design system into the design tool." | Inventory, then a stop ✓ |
+| 2 | "Draw Button and Badge." | Guide built; **`design-sync.json` written**: 22 agreed token values, Button/Badge drawn, Input in code only ✓ |
+| — | (by hand) guide: accent → #3d7f69, radius → 8px; code: radius → 12px | |
+| 3 | "Import Input into the guide." | Drew Input (states from code, focus "proposed"), status → drawn; **agreed token values unchanged** (diff empty) ✓ |
+| 4 | "Apply the guide changes to the code." | "last agreed: design-sync.json": accent = guide changed (contrast 6.0 → 4.5:1); **radius = both changed, asked which wins**; components match; "proposed" states not exported; no checks exist (said); **nothing edited** (code still #2e6b57 / 12px) ✓ |
+
+**Trigger narrowing (#9), in a repo with a UI package:** "Review this screen" → design-critique only ✓; "Make the primary button 2px taller" → a direct edit in `Button.tsx`, no sync ✓.
+
+**Still not run (text only):** design-system's propagation → export; setup's offer after the full interview; a bare "yes" (inventory inside the hand-off); a "no" to the offer; the Paper export read; two UI packages.

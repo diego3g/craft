@@ -52,7 +52,7 @@ A design system is the place where a decision is made once and then reused every
 4. **Stop and show the person the change and that list.**
 5. On approval, propagate:
    - update every screen on the list;
-   - update the code, if any. When `DESIGN.md` says the design system's source is code, do it with **REQUIRED SUB-SKILL:** `design-system-sync` (export), so the code change is a reviewed diff;
+   - update the code, if any. When `DESIGN.md` says the design system's source is code, do it with **REQUIRED SUB-SKILL:** `design-system-sync` (export), so the code change is a reviewed diff. If that diff holds only the change just approved and no conflicts, the approval carries over: say so and apply, without a second stop;
    - update the component index;
    - report what changed where.
 
@@ -70,7 +70,7 @@ A design system is the place where a decision is made once and then reused every
 |---|---|
 | Every colour is a token; no loose hex values in screens or code | Loose values drift into near-duplicates that nobody can change at once |
 | One icon set | Mixed sets look like mixed products |
-| Design and code change together, design first | Otherwise the guide stops being the truth within a week |
+| Design and code change together, design first | Otherwise the guide stops being the truth within a week. When the system's source is code, "design first" means: draw the change in the tool, then land it in code through an approved export |
 | Every interactive piece has a states matrix | States drawn ad hoc on screens never agree |
 | A change to a shared piece is listed with the screens it affects before it propagates | Otherwise one "small" change silently redesigns twenty screens |
 
