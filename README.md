@@ -23,24 +23,30 @@ It stops for your "yes" where it matters and writes its decisions down for next 
 
 ## Install
 
-### Claude Code (recommended)
+### Claude Code, Claude Desktop and claude.ai
+
+Install craft as a plugin. Inside a Claude Code session:
 
 ```
 /plugin marketplace add diego3g/craft
 /plugin install craft@craft
 ```
 
-The plugin also adds a session-start hook, so every request gets sent to the right skill automatically. Update from your shell with `claude plugin update craft@craft`.
+- The plugin adds a session-start hook, so every request goes to the right skill by itself.
+- Skills carry the plugin name: `/craft:craft`, `/craft:setup` and so on.
+- Update from your shell with `claude plugin update craft@craft`.
 
-**Claude Desktop and claude.ai:** go to Customize › Plugins › Add › Add marketplace, then enter `diego3g/craft`.
+In Claude Desktop or claude.ai, go to Customize › Plugins › Add › Add marketplace, then enter `diego3g/craft`.
 
 ### Codex, OpenCode, Cursor and other agents
+
+Install the skills with the [skills CLI](https://skills.sh):
 
 ```
 npx skills add diego3g/craft
 ```
 
-The [skills CLI](https://skills.sh) asks which agents to install into. You can also name the agent yourself:
+It asks which agents to install into. You can also name the agent yourself:
 
 | Agent | Command |
 |---|---|
@@ -61,22 +67,22 @@ These agents don't run the session-start hook. Paste the routing below into your
 
 ```markdown
 ## Design skills
-Before responding to anything that designs, reviews or changes a UI, check this table and use the skill (craft:<name> is the skill folder <name> copied from craft).
+Before responding to anything that designs, reviews or changes a UI, check this table and use the skill.
 First look whether DESIGN.md exists at the project root.
-- No DESIGN.md and a design task → craft:setup, then craft:craft
-- Design / create / redesign a page, screen, flow or element → craft:craft
-- "Options", "alternatives", "I don't like it" → craft:explore
-- "Review", "refine", "make it better", or before showing your own design → craft:critique
-- Tokens, style guide, a component, "audit" → craft:system
-- "Bring our design system into <tool>", "apply the guide changes to the code" → craft:sync
-- "What states are missing?" → craft:states
+- No DESIGN.md and a design task → setup, then craft
+- Design / create / redesign a page, screen, flow or element → craft
+- "Options", "alternatives", "I don't like it" → explore
+- "Review", "refine", "make it better", or before showing your own design → critique
+- Tokens, style guide, a component, "audit" → system
+- "Bring our design system into <tool>", "apply the guide changes to the code" → sync
+- "What states are missing?" → states
 Small edits the person described exactly (one value, label or size): just make them.
 A stop means ending your turn with the question. Never decide a stop for the person.
 ```
 
 </details>
 
-**By hand:** copy the folders in `skills/` into your project's `.agents/skills/` (or `.claude/skills/`), then add the routing above.
+**By hand:** copy the folders in `skills/` into your project's `.agents/skills/`, then add the routing above.
 
 ## The skills
 
@@ -92,14 +98,14 @@ A stop means ending your turn with the question. Never decide a stop for the per
 
 The hidden `using-craft` skill does the routing: it sends each request to the right skill.
 
-In Claude Code each skill is also a slash command: `/craft`, `/setup`, `/explore`… when installed with `npx skills`, or `/craft:craft`, `/craft:setup`… with the plugin. In any agent you can also just ask in plain words.
+In Claude Code, run a skill with its slash command (`/craft:craft`, `/craft:setup`…). In any agent you can also just ask in plain words.
 
 ## The best workflow
 
-1. **Start with the brief.** Run `/setup` once per project. It writes `DESIGN.md`, which every other skill reads first. If your repo already has a component library or token files, setup offers `sync` instead, so nothing gets invented twice.
-2. **Design with `/craft`.** Describe what you need ("a settings page with billing and team"). It stops to confirm the scope and the list of states, then draws.
+1. **Start with the brief.** Run `setup` once per project. It writes `DESIGN.md`, which every other skill reads first. If your repo already has a component library or token files, setup offers `sync` instead, so nothing gets invented twice.
+2. **Design with `craft`.** Describe what you need ("a settings page with billing and team"). It stops to confirm the scope and the list of states, then draws.
 3. **Unsure about the direction?** Say "give me options" and `explore` draws three directions. Pick one, or mix two.
-4. **Review before you ship.** Say "review this" for a `critique` report. `/craft` already runs this check on its own work before showing it.
+4. **Review before you ship.** Say "review this" for a `critique` report. `craft` already runs this check on its own work before showing it.
 5. **Keep the system healthy.** Ask for "an audit" from time to time (`system`). After changing the guide in your design tool, say "apply the guide changes to the code" (`sync`).
 
 Small edits ("make the button 2px taller") skip all of this: the agent makes the change, and says so when it touches a shared piece.
