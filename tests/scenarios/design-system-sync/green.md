@@ -6,3 +6,17 @@
 | | 2: "Draw Button and Badge." | `guide/tokens.css` = the code's tokens under **the same names**; foundations with the guidelines as legend; **component index: Button and Badge drawn, Input in code only**; Button's missing states drawn on a hatched background marked **"Proposed"**; all pages rendered and layout fixed; badge contrast measured (warn ≈3.1:1, success ≈4.2:1, flagged); DESIGN.md records the source and the import ✓ |
 | (c) "Apply the guide changes to the code." | 1 | Triggered. Three-way diff with the base commit from DESIGN.md: accent = guide changed (affects Button primary → Home "New entry", contrast 6.0 → 4.5:1); radius = **both changed, asked which wins**; code-only changes: none. **Nothing edited**; stated up front that the repo has no checks ✓ |
 | | 2: "Apply the accent. For the radius, the code wins (12px)." | Edited only the accent line in `packages/ui/tokens.css`, set the guide's radius to 12px, logged the sync, said there were no checks to run, and noted that the base commit must be updated once the change is committed ✓ |
+
+## Wired into setup, design and routing (the full plugin)
+
+| Prompt | Turn | Result |
+|---|---|---|
+| (a) "Design the settings page." (UI package, no DESIGN.md) | 1 | design-setup: "A design system already exists in code in `packages/ui`: 22 tokens, 3 components, 5 guidelines. I won't ask about colours, fonts or button rules" ✓ |
+| | 2: "Skip the questions." (first run) | ✗ Wrote the brief and went straight to design → screen-states, **without offering the import**. Cause: the skip paragraph only kept the foundations step "if the project has no tokens" |
+| — refactor: skip waives the interview and the brief's approval, **never step 6**; with a system in code it still asks the one import question | | |
+| | 2 (rerun) | Minimal brief with assumptions; then "There's one question I need answered before drawing anything, because skipping the interview doesn't skip it: should I first import the design system?" ✓ |
+| | 3: "Yes, import it. Draw Button and Input." | design-system-sync (import) → design → screen-states: the settings page planned from the imported Button and Input, stopped at the states list ✓ |
+| On-demand: "Design the sign-in page." (guide exists; Input "in code only") | 1 | design → screen-states list, stop ✓ |
+| | 2: "States approved. Draw only the default and error boards." | **design-system-sync imported just Input first** (values read from `Input.tsx`, focus noted as missing in code), the index row flipped to "drawn", then boards drawn, self-check ran, decisions logged ✓ |
+
+Regressions: "pricing page" with an empty folder → design-setup ✓; with a bakery DESIGN.md → design ✓; "2px taller" → a direct edit of the shared `.btn` ✓.

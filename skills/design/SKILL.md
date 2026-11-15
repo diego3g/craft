@@ -39,7 +39,7 @@ A **stop** means: end your turn with the question and wait. You can always do th
 3. **For each item, in order:**
    1. **REQUIRED SUB-SKILL: `screen-states`.** Its written state list and its stop come first.
    2. **Open direction?** Only when the person asked for ideas, or when two structurally different layouts are plausible and neither the brief nor the system chooses between them → **REQUIRED SUB-SKILL: `three-proposals`** before drawing the states. For several pages, ask at the scope stop which page (if any) gets options; never run an option round per page by default. The states are then drawn in the picked direction. A screen that follows an existing pattern goes straight to drawing.
-   3. **Draw** the main state, then the other states, **using only the system's pieces and tokens**. Something new (a component, a colour, a size the scale doesn't have) → **REQUIRED SUB-SKILL: `design-system`** (add mode) before using it. Never hard-code a new value in a page.
+   3. **Draw** the main state, then the other states, **using only the system's pieces and tokens**. Something new (a component, a colour, a size the scale doesn't have) → **REQUIRED SUB-SKILL: `design-system`** (add mode) before using it. A component that **exists in code but isn't drawn in the tool** ("in code only" in the index, or no guide yet) → **REQUIRED SUB-SKILL: `design-system-sync`**, importing just that component first. Never draw a look-alike, and never hard-code a new value in a page.
    4. **REQUIRED SUB-SKILL: `design-critique` in self-check mode** on every board: render it, fix what it finds within this task's scope, and render again.
 4. **Close.**
    - Show the result with the summary below.

@@ -21,7 +21,7 @@ Before the first screen, agree on what the product is, who it's for, how it shou
 
 ## Steps
 
-1. **Read first.** README, docs, existing CSS or tokens, the design file, brand folders, any old `DESIGN.md` draft. Write down what they already answer. **Never ask a question these files answer.** Confirm it in one line instead ("Your README says pt-BR only and members over 60, so I'll design for 18px text and 48px taps").
+1. **Read first.** README, docs, existing CSS or tokens, the design file, brand folders, any old `DESIGN.md` draft. Write down what they already answer. **If the code already has a design system** (a UI package, token files, a component library), say so with counts. In step 6, offer to import it into the design tool instead of creating foundations; the brand questions it answers are skipped. **Never ask a question these files answer.** Confirm it in one line instead ("Your README says pt-BR only and members over 60, so I'll design for 18px text and 48px taps").
 2. **Interview, one question per message.** Follow [the interview](references/interview.md) in its order: product, audience and voice, mood, brand, references, constraints.
    - Offer 3–5 options plus "something else" whenever you can.
    - Skip any question already answered.
@@ -31,7 +31,9 @@ Before the first screen, agree on what the product is, who it's for, how it shou
    - Use their words where you can.
    - Anything you inferred and they didn't confirm goes under Open questions, not into the brief as fact.
 5. **Stop and show the person `DESIGN.md`.** Change it until they approve it.
-6. **REQUIRED SUB-SKILL:** use `design-system` in create mode for the foundations (tokens, type, spacing, interaction rules). It has its own approval stop.
+6. **Foundations.**
+   - **Design system already in code:** offer the import. On yes, **REQUIRED SUB-SKILL:** `design-system-sync` (import). It shows an inventory and asks which components to draw. Offer it even after "skip": it's about the design tool, not the brief.
+   - **No system in code:** **REQUIRED SUB-SKILL:** `design-system` in create mode for the foundations (tokens, type, spacing, interaction rules). It has its own approval stop.
    - Existing tokens and styles are the starting point: extend them, don't rename or move them without asking.
 
 ## If the person says "skip" or "just design it"
@@ -40,7 +42,11 @@ Don't keep asking. Write a minimal `DESIGN.md` from what you read and what they 
 - every gap becomes an Open question;
 - every assumption is marked "(assumed)".
 
-Say in one line which assumptions matter most. "Skip" waives the interview and the brief's approval stop. If the project has no tokens yet, the foundations step (and its stop) still runs, because `design` can only draw with system pieces. Then continue with the task they asked for.
+Say in one line which assumptions matter most. "Skip" waives the interview and the brief's approval stop, never step 6:
+- **design system in code** → still ask the one import question ("Import it into <tool> now? I'll show what's there and you pick the components"), then continue;
+- **no tokens yet** → the foundations step and its stop still run, because `design` can only draw with system pieces.
+
+Then continue with the task they asked for.
 
 ## Before you start
 

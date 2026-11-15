@@ -52,7 +52,7 @@ A design system is the place where a decision is made once and then reused every
 4. **Stop and show the person the change and that list.**
 5. On approval, propagate:
    - update every screen on the list;
-   - update the code, if any;
+   - update the code, if any. When `DESIGN.md` says the design system's source is code, do it with **REQUIRED SUB-SKILL:** `design-system-sync` (export), so the code change is a reviewed diff;
    - update the component index;
    - report what changed where.
 

@@ -24,11 +24,12 @@ A design skill that applies is not optional. Small edits are the only exception 
 | The situation | Skill |
 |---|---|
 | Any request to design, create, mock up or redesign a page, screen, flow or element | `design` |
-| A design task in a project with **no `DESIGN.md`** at its root | `design-setup` first, then `design` |
+| A design task in a project with **no `DESIGN.md`** at its root | `design-setup` first (it offers to import a design system already in code), then `design` |
 | "Set up the design", "define our style / brand / guidelines" | `design-setup` |
 | "Options", "alternatives", "other directions", "I don't like it", "rethink this" | `three-proposals` |
 | "Review", "refine", "polish", "make it better", "feels off", or you are about to show your own design | `design-critique` |
 | Tokens, the style guide, a new or changed component, "make consistent", "audit" | `design-system` |
+| "Import / bring our design system, tokens or components into <tool>"; "apply / push / sync the guide's changes to the code" | `design-system-sync` |
 | "What states are missing?", "is this ready for dev?" | `screen-states` |
 
 A reusable piece for the system ("we need a date picker component") goes to `design-system`; something on a specific page goes to `design`. These are this plugin's skills (`design-skills:<name>` in Claude Code); prefer them over same-named skills from elsewhere.
