@@ -80,7 +80,7 @@ test('every skill needs an HTML adapter', () => {
 });
 
 test('the entry skill needs no adapters', () => {
-  const { dir } = skill({ 'SKILL.md': fm('using-design-skills') }, 'using-design-skills');
+  const { dir } = skill({ 'SKILL.md': fm('using-craft') }, 'using-craft');
   assert.deepEqual(checkSkill(dir), []);
 });
 

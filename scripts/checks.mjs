@@ -5,7 +5,7 @@ const TOOL_NAMES = /\b(mcp__[a-z0-9_]+|get_jsx|write_html|duplicate_nodes|get_sc
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'scratch']);
 const LINE_LIMIT = 250;
 // The entry skill routes to other skills and never touches a design tool, so it has no adapters.
-const NO_ADAPTERS = new Set(['using-design-skills']);
+const NO_ADAPTERS = new Set(['using-craft']);
 
 const normalise = (text) => text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
 

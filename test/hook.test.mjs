@@ -11,15 +11,15 @@ const run = (env) => JSON.parse(execFileSync('bash', [resolve(root, 'hooks/run-h
 test('Claude Code gets hookSpecificOutput.additionalContext with the entry skill', () => {
   const out = run({ CLAUDE_PLUGIN_ROOT: root });
   assert.equal(out.hookSpecificOutput.hookEventName, 'SessionStart');
-  assert.match(out.hookSpecificOutput.additionalContext, /name: using-design-skills/);
+  assert.match(out.hookSpecificOutput.additionalContext, /name: using-craft/);
 });
 
 test('Cursor gets additional_context', () => {
-  assert.match(run({ CURSOR_PLUGIN_ROOT: root }).additional_context, /using-design-skills/);
+  assert.match(run({ CURSOR_PLUGIN_ROOT: root }).additional_context, /using-craft/);
 });
 
 test('other agents get the SDK-standard additionalContext', () => {
-  assert.match(run({}).additionalContext, /using-design-skills/);
+  assert.match(run({}).additionalContext, /using-craft/);
 });
 
 test('an unknown hook script exits 0 with no output', () => {
