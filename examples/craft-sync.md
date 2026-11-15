@@ -1,4 +1,4 @@
-# Example · craft:sync
+# Example · craft-sync
 
 An invented journaling app, "Fieldnote", already has `packages/ui/`: 22 tokens, Button, Input, Badge and a `guidelines.md`.
 

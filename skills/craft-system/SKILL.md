@@ -1,5 +1,5 @@
 ---
-name: system
+name: craft-system
 description: Use when starting a design system, style guide or token set, adding or changing a component or token, standardizing screens that drifted apart, or auditing a guide for loose colours, one-off pieces, missing states or screens that don't match it.
 ---
 
@@ -52,7 +52,7 @@ A design system is the place where a decision is made once and then reused every
 4. **Stop and show the person the change and that list.**
 5. On approval, propagate:
    - update every screen on the list;
-   - update the code, if any. When `DESIGN.md` says the design system's source is code, do it with **REQUIRED SUB-SKILL:** `craft:sync` (export), so the code change is a reviewed diff. If that diff holds only the change just approved and no conflicts, the approval carries over: say so and apply, without a second stop;
+   - update the code, if any. When `DESIGN.md` says the design system's source is code, do it with **REQUIRED SUB-SKILL:** `craft-sync` (export), so the code change is a reviewed diff. If that diff holds only the change just approved and no conflicts, the approval carries over: say so and apply, without a second stop;
    - update the component index;
    - report what changed where.
 

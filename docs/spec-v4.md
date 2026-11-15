@@ -23,3 +23,7 @@ Private check settings moved too: `CRAFT_DENYLIST`, `CRAFT_PRIVATE_TOKENS`, `~/.
 ## 0.5.0: `make` becomes `craft`
 
 The main skill's folder and name are now `craft`, matching the package: `/craft` when installed with `npx skills` (skills keep their plain names there), `/craft:craft` in the Claude Code plugin. The other skills keep their names.
+
+## 0.6.0: every skill carries the package name
+
+Installed with `npx skills`, skills keep their plain folder names, so `setup`, `sync` and `system` would clash with other packages. They are now `craft-setup`, `craft-states`, `craft-explore`, `craft-system`, `craft-sync` and `craft-critique`; `craft` and `using-craft` stay. In the Claude Code plugin they read `/craft:craft-setup` and so on. Skill text names them by these names; older test records keep the names they ran with.

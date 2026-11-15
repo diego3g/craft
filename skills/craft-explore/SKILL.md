@@ -1,5 +1,5 @@
 ---
-name: explore
+name: craft-explore
 description: Use when asked for options, alternatives, variations, directions or "a few ideas" for a screen, flow or element, when the person rejects a design or says they don't like it, or says "rethink this", "try something else" or "design both so I can pick".
 ---
 

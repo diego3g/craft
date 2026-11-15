@@ -1,5 +1,5 @@
 ---
-name: critique
+name: craft-critique
 description: Use when asked to review, critique, refine or polish a design or screen, when something "feels off", "looks busy" or "isn't good yet", after finishing a screen and before showing it, or before handing a design to code.
 ---
 
@@ -50,7 +50,7 @@ Critique the screen people will **see**, not the source you can read: render it 
    - **render again** with the same command and sizes as step 1 (if it worked then, it works now: try it before saying you can't);
    - re-run the checks on what changed;
    - report each fix and anything that is still open.
-5. A fix that changes a **shared component** (a button used on twenty screens) is not a local fix. Name it, and hand it to the craft:system process, so every screen that uses the piece changes together.
+5. A fix that changes a **shared component** (a button used on twenty screens) is not a local fix. Name it, and hand it to the craft-system process, so every screen that uses the piece changes together.
 
 ## Rules (summary; detail in references/rules.md)
 

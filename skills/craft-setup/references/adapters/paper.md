@@ -1,6 +1,6 @@
 # Adapter: Paper (Paper MCP)
 
-Setup writes `DESIGN.md` as a file in the repo. Paper is only used for the optional references board and, through `craft:system` (create) or `craft:sync` (import), the foundations.
+Setup writes `DESIGN.md` as a file in the repo. Paper is only used for the optional references board and, through `craft-system` (create) or `craft-sync` (import), the foundations.
 
 | Skill verb | In Paper |
 |---|---|

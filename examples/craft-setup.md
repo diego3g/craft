@@ -1,4 +1,4 @@
-# Example · craft:setup
+# Example · craft-setup
 
 **Prompt:** "Set up the design for my new app: a booking app for a small yoga studio." The folder has a README (pt-BR only, members over 60, a sage and paper brand, a lotus logo) and a small `tokens.css`.
 
@@ -18,4 +18,4 @@ It wrote `DESIGN.md` with all eight sections (Product, Audience and voice, Mood,
 2. Calm, warm, unhurried; never a gym app, a generic dashboard or anything neon.
 3. Members' screens get 18px text and 48px taps; the instructors' laptop screens are denser.
 
-Then it built the foundations through `craft:system`: it extended `tokens.css` without renaming anything, made a foundations page with a full interaction-states table, and stopped for approval.
+Then it built the foundations through `craft-system`: it extended `tokens.css` without renaming anything, made a foundations page with a full interaction-states table, and stopped for approval.

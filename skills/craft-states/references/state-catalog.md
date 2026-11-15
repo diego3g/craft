@@ -51,4 +51,4 @@ Walk every group. For each item, write **applies** (and what the screen shows), 
 
 Normal · hover · pressed · focus (keyboard only) · disabled · loading · selected.
 
-These come from the design system's states matrix. Don't redraw them on every screen. If the project has no states matrix, draw the interaction states that change layout or content on a state sheet, and suggest the craft:system process to make the matrix. Only draw an interaction state on a screen when it changes the layout or content: a loading button that swaps its label, or a selected row that opens details.
+These come from the design system's states matrix. Don't redraw them on every screen. If the project has no states matrix, draw the interaction states that change layout or content on a state sheet, and suggest the craft-system process to make the matrix. Only draw an interaction state on a screen when it changes the layout or content: a loading button that swaps its label, or a selected row that opens details.

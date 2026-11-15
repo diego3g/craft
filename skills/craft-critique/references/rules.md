@@ -1,6 +1,6 @@
 # Critique rules
 
-**Calibration:** each rule is a default. When the project's design system says otherwise, the system wins: note the difference, don't flag it. A fix that changes a shared component goes through the craft:system process, so every screen that uses it changes together.
+**Calibration:** each rule is a default. When the project's design system says otherwise, the system wins: note the difference, don't flag it. A fix that changes a shared component goes through the craft-system process, so every screen that uses it changes together.
 
 ## Hierarchy and restraint
 

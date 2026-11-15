@@ -1,6 +1,6 @@
 # Adapter: Figma
 
-Setup writes `DESIGN.md` as a file in the repo. Figma is only used for the optional references board and, through `craft:system` (create) or `craft:sync` (import), the foundations. Tool names vary by Figma MCP server; check your server's tool list.
+Setup writes `DESIGN.md` as a file in the repo. Figma is only used for the optional references board and, through `craft-system` (create) or `craft-sync` (import), the foundations. Tool names vary by Figma MCP server; check your server's tool list.
 
 | Skill verb | In Figma |
 |---|---|

@@ -11,7 +11,7 @@
 
 ## Turn 2: "Approved, draw default and empty first time"
 
-The system had no field, switch or settings row, so it went to `craft:system` (add mode) first. It proposed those pieces with full states and a component index, listed the screens they affect, and stopped.
+The system had no field, switch or settings row, so it went to `craft-system` (add mode) first. It proposed those pieces with full states and a component index, listed the screens they affect, and stopped.
 
 ## Turn 3: "Pieces approved"
 

@@ -1,6 +1,6 @@
 ---
-name: setup
-description: Use when a request to design or create a page, screen or element starts in a project with no DESIGN.md at its root, when the person asks to set up, define or start the design, style, brand or guidelines of a product, or runs /craft:setup.
+name: craft-setup
+description: Use when a request to design or create a page, screen or element starts in a project with no DESIGN.md at its root, when the person asks to set up, define or start the design, style, brand or guidelines of a product, or runs /craft-setup (/craft:craft-setup in the Claude Code plugin).
 ---
 
 # Design setup
@@ -12,12 +12,12 @@ Before the first screen, agree on what the product is, who it's for, how it shou
 ## When to use
 
 - A design task and no `DESIGN.md` at the project root.
-- "Set up the design", "define our style / brand / guidelines", `/craft:setup`.
+- "Set up the design", "define our style / brand / guidelines", `/craft-setup` (`/craft:craft-setup` in the Claude Code plugin).
 
 ## When NOT to use
 
-- `DESIGN.md` exists and the task is a design: use `craft:craft`.
-- Changing one token or one guideline: use `craft:system`.
+- `DESIGN.md` exists and the task is a design: use `craft`.
+- Changing one token or one guideline: use `craft-system`.
 
 ## Steps
 
@@ -32,8 +32,8 @@ Before the first screen, agree on what the product is, who it's for, how it shou
    - Anything you inferred and they didn't confirm goes under Open questions, not into the brief as fact.
 5. **Stop and show the person `DESIGN.md`.** Change it until they approve it.
 6. **Foundations.**
-   - **Design system already in code:** offer the import. On yes, **REQUIRED SUB-SKILL:** `craft:sync` (import). It shows an inventory and asks which components to draw. On no, log "<date> — Import into <tool> declined" in the Decisions log. Offer it even after "skip": it's about the design tool, not the brief.
-   - **No system in code:** **REQUIRED SUB-SKILL:** `craft:system` in create mode for the foundations (tokens, type, spacing, interaction rules). It has its own approval stop.
+   - **Design system already in code:** offer the import. On yes, **REQUIRED SUB-SKILL:** `craft-sync` (import). It shows an inventory and asks which components to draw. On no, log "<date> — Import into <tool> declined" in the Decisions log. Offer it even after "skip": it's about the design tool, not the brief.
+   - **No system in code:** **REQUIRED SUB-SKILL:** `craft-system` in create mode for the foundations (tokens, type, spacing, interaction rules). It has its own approval stop.
    - Existing tokens and styles are the starting point: extend them, don't rename or move them without asking.
 
 ## If the person says "skip" or "just design it"
@@ -44,7 +44,7 @@ Don't keep asking. Write a minimal `DESIGN.md` from what you read and what they 
 
 Say in one line which assumptions matter most. "Skip" waives the interview and the brief's approval stop, never step 6:
 - **design system in code** → still ask the one import question ("Import it into <tool> now? I'll show what's there and you pick the components"), then continue;
-- **no tokens yet** → the foundations step and its stop still run, because `craft:craft` can only draw with system pieces.
+- **no tokens yet** → the foundations step and its stop still run, because `craft` can only draw with system pieces.
 
 Then continue with the task they asked for.
 
@@ -63,18 +63,18 @@ Then continue with the task they asked for.
 | References always come with take/avoid | "I like Stripe" is useless; "take the calm spacing, avoid the gradients" is a rule |
 | "Never like" is asked explicitly | What to avoid narrows the design faster than what to aim for |
 | Don't redesign existing files during setup | Setup records decisions; changing their CSS is a design task they didn't ask for yet |
-| No screens during setup | Screens come from `craft:craft`, after the brief and foundations are approved |
+| No screens during setup | Screens come from `craft`, after the brief and foundations are approved |
 
 ## Done when
 
-`DESIGN.md` is approved with its eight sections, and the foundations are settled: created and approved through `craft:system`, or (with a system in code) imported through `craft:sync` or the import declined and logged. After a "skip": `DESIGN.md` is written with its assumptions marked, the foundations exist (approved, or already in the project), and the original task has continued.
+`DESIGN.md` is approved with its eight sections, and the foundations are settled: created and approved through `craft-system`, or (with a system in code) imported through `craft-sync` or the import declined and logged. After a "skip": `DESIGN.md` is written with its assumptions marked, the foundations exist (approved, or already in the project), and the original task has continued.
 
 ## Common mistakes
 
 | Thought | Reality |
 |---|---|
 | "I'll pick a nice palette and fonts, they can change it" | They can't change what they didn't know was decided. Ask, or mark it "(assumed)". |
-| "While I'm here I'll mock the main screens" | That's `craft:craft`'s job, after approval. Setup ends at the brief and foundations. |
+| "While I'm here I'll mock the main screens" | That's `craft`'s job, after approval. Setup ends at the brief and foundations. |
 | "Let me ask all six questions at once to save time" | One per message, with options. It's faster for them to answer. |
 | "Their tokens are messy, I'll restructure them" | Extend them. Restructuring is a separate, approved change. |
 | "No references given, I'll skip that section" | Ask for them. If they have none, offer three that fit the mood and ask what to take and avoid from each. |

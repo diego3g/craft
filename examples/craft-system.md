@@ -1,4 +1,4 @@
-# Example · craft:system
+# Example · craft-system
 
 ## Create: "Start a style guide for a dental clinic booking app."
 

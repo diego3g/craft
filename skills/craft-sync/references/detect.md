@@ -40,4 +40,4 @@ If token files are built (Style Dictionary, a theme compiler, `tokens.json` → 
 
 - **Two UI packages** (an old and a new one, or web and mobile): list both with counts and ask which is the source.
 - **Tokens and components disagree** (a component hard-codes a colour that has a token): import the token and note the component's hard-coded value as a gap.
-- **Nothing found:** this isn't a sync; use `craft:system` create.
+- **Nothing found:** this isn't a sync; use `craft-system` create.

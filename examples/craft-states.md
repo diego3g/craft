@@ -1,4 +1,4 @@
-# Example · craft:states
+# Example · craft-states
 
 *(Trimmed: the full list also covered the interaction states and every catalogue item.)*
 

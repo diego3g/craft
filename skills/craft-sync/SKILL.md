@@ -1,5 +1,5 @@
 ---
-name: sync
+name: craft-sync
 description: Use when a design task is about to start in a project whose design system already lives in code (a UI package, design tokens, a component library) but isn't in the design tool, when asked to import or bring the design system, tokens or components into the design tool, or to apply, push or sync changes from the design tool's guide back to the code.
 ---
 
@@ -15,13 +15,13 @@ A small file at the project root, **`design-sync.json`**, remembers what was las
 
 ## When to use
 
-- A design task is about to start in a project with a design system in code and no guide in the tool. `craft:setup` and `craft:craft` hand off to this.
+- A design task is about to start in a project with a design system in code and no guide in the tool. `craft-setup` and `craft` hand off to this.
 - "Import / bring our design system (tokens, components) into Paper / Figma / the design tool."
 - "Apply / push / sync the guide's changes to the code."
 
 ## When NOT to use
 
-- No design system in code: `craft:system` (create mode).
+- No design system in code: `craft-system` (create mode).
 - A review, options or a small edit in such a project: those skills work from the code as it is.
 - A single token value the person dictated ("make the accent #3d7f69 in code"): edit it directly, update `design-sync.json` for that name, say what it affects.
 
@@ -66,9 +66,9 @@ A small file at the project root, **`design-sync.json`**, remembers what was las
 5. **Record:**
    - write `design-sync.json` (all token values now equal on both sides, plus component statuses);
    - in `DESIGN.md`, Brand gets "Design system source: `<path>`; the <tool> guide mirrors it", and the Decisions log gets a dated import line;
-   - if there's no `DESIGN.md`, create one whose first line is `<!-- sync record only: run craft:setup for the brief -->` with just Brand and the Decisions log. `craft:craft` treats a `DESIGN.md` without a Product section as missing.
+   - if there's no `DESIGN.md`, create one whose first line is `<!-- sync record only: run craft-setup for the brief -->` with just Brand and the Decisions log. `craft` treats a `DESIGN.md` without a Product section as missing.
 
-### Import of one component (from `craft:craft`)
+### Import of one component (from `craft`)
 
 The person already agreed to mirror the system, so there's no inventory stop:
 - draw that component;

@@ -1,4 +1,4 @@
-# Example · craft:critique
+# Example · craft-critique
 
 **Prompt:** "Review this screen." It's a project tracker's task screen with six planted flaws.
 

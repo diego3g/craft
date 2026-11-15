@@ -1,4 +1,4 @@
-# Example · craft:explore
+# Example · craft-explore
 
 **Prompt:** "I don't like this settings page, give me options." It's a project tracker's settings page: 7 equal buttons, a flat list of 8 checkboxes, and danger actions mixed into the form.
 
