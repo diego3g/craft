@@ -1,113 +1,63 @@
-# craft
+<p align="center">
+  <img src="assets/banner.png" alt="craft" width="100%">
+</p>
 
-**Install once. From then on your agent designs like a careful designer, by itself.**
+<p align="center">
+  <b>Design skills for AI agents.</b> Complete screens with every state, and a design system that stays consistent.<br>
+  Works with Paper, Figma or plain HTML, in Claude Code, Codex, OpenCode, Cursor and other agents.
+</p>
 
-Ask for "a pricing page" and the agent:
-1. sets up a design brief if the project has none;
-2. plans the screens;
-3. lists every state they can be in;
-4. offers options only when the direction is open;
-5. uses your design system's pieces;
-6. checks its own work before showing it;
-7. writes its decisions down for next time.
+<p align="center">
+  <a href="https://skills.sh/diego3g/craft"><img src="https://skills.sh/b/diego3g/craft" alt="skills.sh"></a>
+</p>
 
-Each step stops for your "yes" where it matters.
+---
 
-It's for **developers who design with AI**: an agent plus a design tool (Paper, Figma, or plain HTML), wanting complete, consistent screens rather than just the happy path.
+Ask your agent for "a pricing page" and, with craft installed, it works like a careful designer:
+- it writes a short design brief first;
+- it lists every state the screen can be in;
+- it uses your design system's pieces;
+- it checks its own work before showing it.
 
-## How it works
-
-```
-your request
-   │
-   ▼
-using-craft ── loaded at session start; routes the request to the right skill
-   │
-   ├─ no DESIGN.md? ──▶ craft:setup ── interview, one question at a time ─▶ DESIGN.md ─▶ foundations
-   │                        └─ design system already in code? ─▶ craft:sync (import) ─▶ guide in your tool
-   │
-   ▼
-craft:make
-   1. read DESIGN.md + the design system; code beats a stale brief
-   2. list the pages/elements ─────────────────────────── stop: confirm scope
-   3. for each one:
-        craft:states ── every state, in words ───────── stop: approve the list
-        craft:explore ── only if the direction is open ─ stop: pick one
-        draw with system pieces; new pieces via craft:system ── stop: approve them
-        craft:critique (self-check) ── render, fix, render again
-   4. summary + decisions appended to DESIGN.md
-```
-
-Each skill also starts on its own when you ask for it directly: "give me options", "review this", "audit the guide". Small edits ("make the button 2px taller") stay small: no process, just the change, and a note when it touches a shared piece.
-
-## The skills
-
-| Skill | Starts when | What it makes the agent do |
-|---|---|---|
-| `using-craft` | every session (hook) | Check whether `DESIGN.md` exists, route the request, and treat stops as real (end the turn with the question, never decide for you) |
-| `craft:setup` | a design task and no `DESIGN.md`; "set up our design"; `/craft:setup` | Read the project first. Interview one question at a time: product, voice, mood and "never like", brand, references (what to take and avoid from each), constraints. Write `DESIGN.md`, then build the foundations |
-| `craft:make` | "design / create / redesign a page, screen, flow, element"; `/craft:make` | The front door above |
-| `craft:states` | designing a screen; "what states are missing?" | Every state in writing (data, system, activity, people, interaction) with messy realistic data, drawn and named |
-| `craft:explore` | "options", "alternatives", "I don't like it" | Three directions that really differ (structure, interaction, density, emphasis, removal; never just a new colour scheme), next to the current design, recommendation first |
-| `craft:system` | tokens, the style guide, a new component, "audit" | Role-named tokens, interaction rules defined once, a states matrix per component, a component index, and changes listed with the screens they affect before they spread. Audits report and never fix on their own |
-| `craft:sync` | a design system already in code; "bring our components into Paper"; "apply the guide changes to the code" | **Import:** inventory of tokens and components, then you pick what to draw; tokens keep their code names; a component index marks what's drawn or only in code. **Export:** a diff of what changed in the tool since the last sync (asking when both sides changed), applied only after your OK, with your project's checks run |
-| `craft:critique` | "review", "refine", "make it better", and before showing any design | Render it and look, check hierarchy, space, layout shift, interaction feel, contrast, text, consistency and motion, and rank by impact. Review mode changes nothing |
-
-In Claude Code, skills are also slash commands: `/craft:make`, `/craft:setup`, and so on.
-
-## Already have a design system in code?
-
-If your repo has a UI package, token files or a component library, setup notices it and offers to bring it into your design tool instead of inventing a new one:
-1. It shows an inventory.
-2. You pick which components to draw now.
-3. Your tool's tokens keep the code's names.
-4. When a screen later needs a component that is still only in code, `/craft:make` imports just that one first.
-
-Changes you make to the guide in the tool go back as a reviewed diff ("apply the guide changes to the code"). A small `design-sync.json` at the project root remembers the last values both sides agreed on, so it can tell your guide changes from changes in the code, with or without git. When both sides changed, it asks which one wins.
-
-## `DESIGN.md`
-
-`craft:setup` writes it (`craft:sync` adds the design system's source to it) and every other skill reads it first. It has eight short sections: Product, Audience and voice, Mood (words and "never like"), Brand, References (take / avoid), Constraints, a dated **Decisions log** and **Open questions**. It's how a design decision made on Monday survives into Thursday's session.
-
-## Your project wins
-
-Every rule about *look* is a default. If your design system says otherwise (hover fills the background, cards carry shadows, two primary buttons on purpose), the agent follows yours and mentions the difference once.
-
-A few rules are firm in every project, because they're about process, not taste:
-- cover the states;
-- stop for approval at the gates;
-- make options that really differ;
-- every colour is a token;
-- one icon set;
-- every interactive piece has a states matrix;
-- design and code change together, design first;
-- a change to a shared piece is listed with the screens it affects before it spreads.
-
-## Works with any design tool
-
-The skills speak in verbs ("create a board", "read exact values from the design, never from a screenshot", "render and look"). Each skill has adapters that map those verbs to a tool:
-- **Paper**, through its MCP server;
-- **Figma**, through an MCP server;
-- **plain HTML/CSS**, which is also the fallback.
-
-With a tool that has no adapter, the agent does the same verbs in that tool and says which ones it mapped by hand.
+It stops for your "yes" where it matters and writes its decisions down for next time.
 
 ## Install
 
-**Claude Code (plugin, recommended).** Gives you the session-start routing. Inside a session:
+### Claude Code (recommended)
 
 ```
 /plugin marketplace add diego3g/craft
 /plugin install craft@craft
 ```
 
-Or from your shell: `claude plugin marketplace add diego3g/craft && claude plugin install craft@craft`. Update later with `claude plugin update craft@craft`.
+The plugin also adds a session-start hook, so every request gets sent to the right skill automatically. Update from your shell with `claude plugin update craft@craft`.
 
-**Claude Desktop and claude.ai.** Customize › Plugins › Add › Add marketplace, then enter `diego3g/craft`. In chat the session-start hook doesn't run, so the skills start from their own descriptions.
+**Claude Desktop and claude.ai:** go to Customize › Plugins › Add › Add marketplace, then enter `diego3g/craft`.
 
-**Skills only, any agent (Codex, Cursor, Copilot, Gemini CLI and others):** `npx skills add diego3g/craft` or `gh skill install diego3g/craft`. These install the skills but not the session-start hook, so also add the routing below to your `AGENTS.md`.
+### Codex, OpenCode, Cursor and other agents
 
-**By hand.** Copy the folders from `skills/` into your project's `.agents/skills/` (or `.claude/skills/`). Without a session-start hook, add this to your `AGENTS.md` so the routing still happens:
+```
+npx skills add diego3g/craft
+```
+
+The [skills CLI](https://skills.sh) asks which agents to install into. You can also name the agent yourself:
+
+| Agent | Command |
+|---|---|
+| Codex | `npx skills add diego3g/craft -a codex` |
+| OpenCode | `npx skills add diego3g/craft -a opencode` |
+| Cursor | `npx skills add diego3g/craft -a cursor` |
+| Gemini CLI | `npx skills add diego3g/craft -a gemini-cli` |
+| GitHub Copilot | `npx skills add diego3g/craft -a github-copilot` |
+| Windsurf | `npx skills add diego3g/craft -a windsurf` |
+
+- Add `-g` to install for every project instead of only the current one.
+- Run `npx skills update` to update later.
+
+These agents don't run the session-start hook. Paste the routing below into your `AGENTS.md` so the agent still picks the right skill.
+
+<details>
+<summary><b>Routing for AGENTS.md</b></summary>
 
 ```markdown
 ## Design skills
@@ -124,27 +74,61 @@ Small edits the person described exactly (one value, label or size): just make t
 A stop means ending your turn with the question. Never decide a stop for the person.
 ```
 
-## How they were tested
+</details>
 
-Every skill was written test-first:
-- **Without the skill:** a fresh agent ran realistic scenarios, to record what goes wrong.
-- **With the skill:** the skill was written against those failures, and the same scenarios ran again with the skill installed but never named, so the description also had to trigger it.
-- **Workflow runs:** with the whole plugin loaded, a few prompts check that each request reaches the right skill and that small edits stay small.
+**By hand:** copy the folders in `skills/` into your project's `.agents/skills/` (or `.claude/skills/`), then add the routing above.
 
-The records are in [`tests/scenarios/`](tests/scenarios/); the ones written before 0.4.0 use the old skill names (see [the rename](docs/spec-v4.md)). The HTML adapter ran with real renders (headless Chrome), and the Paper adapters of the four original skills (`craft:states`, `craft:explore`, `craft:system`, `craft:critique`) ran against the Paper MCP; the `craft:make` and `craft:setup` Paper adapters haven't run yet. `craft:sync`'s import ran in HTML and in Paper; its export ran in HTML only. **The Figma adapter hasn't been tested yet**: reports and fixes are welcome.
+## The skills
 
-## Credits
+| Skill | What it does |
+|---|---|
+| **`craft:setup`** | Interviews you one question at a time: product, audience and voice, mood, brand, references, constraints. It then writes `DESIGN.md` and builds the foundations (tokens and base components). |
+| **`craft:make`** | The main command, for designing a page, screen, flow or element. It confirms the scope, then for each screen lists the states, draws with your system's pieces and checks the result. |
+| **`craft:states`** | Lists every state a screen can be in (empty, loading, error, long content, permissions, offline…) using realistic messy data, then draws and names each one. |
+| **`craft:explore`** | Draws three directions that really differ in structure, interaction or density, never just new colours. They sit next to the current design, with a recommendation first. |
+| **`craft:system`** | Looks after the design system: role-named tokens, interaction rules defined once, a states matrix per component, and a component index. Before a change spreads, it lists the screens the change affects. |
+| **`craft:sync`** | Brings a design system that already lives in code into your design tool. Later it sends the guide's changes back to the code as a reviewed diff. |
+| **`craft:critique`** | Renders the design and looks at it, then checks hierarchy, spacing, contrast, text, consistency and motion. Findings are ranked by impact. In review mode it changes nothing. |
 
-The session-start hook and the "one entry skill that routes to the rest" workflow come from [obra/superpowers](https://github.com/obra/superpowers) (MIT), which does this for coding. The hook files carry that credit.
+The hidden `using-craft` skill does the routing: it sends each request to the right skill.
+
+In Claude Code every skill is also a slash command: `/craft:make`, `/craft:setup`, and so on. In other agents, just ask in plain words.
+
+## The best workflow
+
+1. **Start with the brief.** Run `craft:setup` once per project. It writes `DESIGN.md`, which every other skill reads first. If your repo already has a component library or token files, setup offers `craft:sync` instead, so nothing gets invented twice.
+2. **Design with `craft:make`.** Describe what you need ("a settings page with billing and team"). It stops to confirm the scope and the list of states, then draws.
+3. **Unsure about the direction?** Say "give me options" and `craft:explore` draws three directions. Pick one, or mix two.
+4. **Review before you ship.** Say "review this" for a `craft:critique` report. `craft:make` already runs this check on its own work before showing it.
+5. **Keep the system healthy.** Ask for "an audit" from time to time (`craft:system`). After changing the guide in your design tool, say "apply the guide changes to the code" (`craft:sync`).
+
+Small edits ("make the button 2px taller") skip all of this: the agent makes the change, and says so when it touches a shared piece.
+
+## Good to know
+
+- **`DESIGN.md`** has eight short sections: Product, Audience and voice, Mood, Brand, References, Constraints, a dated Decisions log and Open questions. It's how Monday's decisions survive into Thursday's session.
+- **Your project wins.** Every rule about *look* is a default. If your design system does something else, the agent follows yours.
+- **Some rules hold in every project**, because they're about process, not taste:
+  - cover the states;
+  - stop for approval;
+  - give options that really differ;
+  - make every colour a token;
+  - use one icon set;
+  - change design and code together.
+- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), Figma (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter hasn't been tested yet, so reports are welcome.
 
 ## Contributing
 
 ```
 npm test        # validator and hook tests
-npm run check   # skill format, links that stay inside each skill, no tool names outside adapters
+npm run check   # skill format, links, no tool names outside adapters
 ```
 
-Changes to a skill should come with a scenario that fails without the change and passes with it.
+Every skill was written test-first: scenarios ran without the skill, then with it (see [`tests/scenarios/`](tests/scenarios/)). Changes to a skill should come with a scenario that fails before the change and passes after it.
+
+## Credits
+
+The session-start hook and the "one entry skill that routes to the rest" idea come from [obra/superpowers](https://github.com/obra/superpowers) (MIT). The banner uses [Departure Mono](https://departuremono.com) (OFL).
 
 ## License
 
