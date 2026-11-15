@@ -7,6 +7,10 @@
   Works with Paper, Figma or plain HTML, in Claude Code, Codex, OpenCode, Cursor and other agents.
 </p>
 
+<p align="center">
+  <a href="https://skills.sh/diego3g/craft"><img src="https://skills.sh/b/diego3g/craft" alt="skills.sh"></a>
+</p>
+
 ---
 
 Ask your agent for "a pricing page" and, with craft installed, it works like a careful designer:
