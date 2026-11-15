@@ -13,3 +13,11 @@ Runner: `claude -p --setting-sources project --plugin-dir <repo> --add-dir <repo
 | 6 | design carried through drawing | see `tests/scenarios/design/green.md` (settings, turns 1–3) | design → screen-states → design-system → design-critique (self-check) | ✓ |
 | 7 | "Review this screen." | 6-flaw screen + DESIGN.md: "hover = selected on purpose" | design-critique (review) | ✓ "Project rule respected … Not flagged"; rendered at 1280 and 390; `review.md`; screen unchanged |
 | 8 | "We need a date picker component." | small app | design-system (add) | ✓ stopped on the brief/code mismatch before building |
+
+## Fix pass after the v2 final review
+
+| Prompt | Folder | Before the fix | After the fix |
+|---|---|---|---|
+| "Review this screen." | screen only, no DESIGN.md | design-critique ✓ | — |
+| "Give me options for this screen." | screen only, no DESIGN.md | ✗ **design-setup** ("I need a short brief before I draw any options") | ✓ **three-proposals**: "no DESIGN.md, which is fine for options on an existing screen"; reuses the screen's own style |
+| "Make me a pricing page for a bakery app." | empty | — | ✓ still **design-setup** (no regression from the narrower setup description) |

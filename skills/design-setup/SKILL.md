@@ -1,6 +1,6 @@
 ---
 name: design-setup
-description: Use when a design task starts in a project with no DESIGN.md at its root, when the person asks to set up, define or start the design, style, brand or guidelines of a product, or runs /design-setup.
+description: Use when a request to design or create a page, screen or element starts in a project with no DESIGN.md at its root, when the person asks to set up, define or start the design, style, brand or guidelines of a product, or runs /design-setup.
 ---
 
 # Design setup
@@ -40,7 +40,7 @@ Don't keep asking. Write a minimal `DESIGN.md` from what you read and what they 
 - every gap becomes an Open question;
 - every assumption is marked "(assumed)".
 
-Say in one line which assumptions matter most, then continue with the task they asked for.
+Say in one line which assumptions matter most. "Skip" waives the interview and the brief's approval stop. If the project has no tokens yet, the foundations step (and its stop) still runs, because `design` can only draw with system pieces. Then continue with the task they asked for.
 
 ## Before you start
 
@@ -61,7 +61,7 @@ Say in one line which assumptions matter most, then continue with the task they 
 
 ## Done when
 
-`DESIGN.md` is approved with its eight sections, and the foundations are approved through `design-system`.
+`DESIGN.md` is approved with its eight sections, and the foundations are approved through `design-system`. After a "skip": `DESIGN.md` is written with its assumptions marked, the foundations exist (approved, or already in the project), and the original task has continued.
 
 ## Common mistakes
 

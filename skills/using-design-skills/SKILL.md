@@ -31,9 +31,11 @@ A design skill that applies is not optional. Small edits are the only exception 
 | Tokens, the style guide, a new or changed component, "make consistent", "audit" | `design-system` |
 | "What states are missing?", "is this ready for dev?" | `screen-states` |
 
+A reusable piece for the system ("we need a date picker component") goes to `design-system`; something on a specific page goes to `design`. These are this plugin's skills (`design-skills:<name>` in Claude Code); prefer them over same-named skills from elsewhere.
+
 ## Priority
 
-1. `design-setup` before anything else when there is no `DESIGN.md`.
+1. `design-setup` before `design` when there is no `DESIGN.md`. Reviews, options for an existing screen, audits and state questions don't need a brief: they work from what's already there.
 2. `design` before its sub-skills: it calls `screen-states`, `three-proposals`, `design-system` and `design-critique` at the right moment, so don't start them yourself in the middle of a `design` run.
 3. `design-critique` is the last step before you show anything you made.
 

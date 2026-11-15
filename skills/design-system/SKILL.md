@@ -18,7 +18,7 @@ A design system is the place where a decision is made once and then reused every
 ## When NOT to use
 
 - A question about one value ("what's our primary colour?"): answer it.
-- A one-line visual fix inside a single screen that touches no shared piece.
+- A small edit the person described exactly (one value, one label, one size), even on a shared piece: change it once where it's defined and say which screens it affects. No states matrix, no stop.
 
 ## Before you start
 

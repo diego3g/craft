@@ -40,8 +40,12 @@ REM (plugin still works, just without SessionStart context injection)
 exit /b 0
 CMDBLOCK
 
-# Unix: run the named script directly
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# Unix: run the named script directly. Exit quietly (0, no output) when bash or the
+# script is missing, so a broken install never breaks the session. No external
+# commands here: PATH may not even have dirname.
+case "$0" in */*) SCRIPT_DIR="${0%/*}" ;; *) SCRIPT_DIR="." ;; esac
 SCRIPT_NAME="$1"
 shift
+command -v bash >/dev/null 2>&1 || exit 0
+[ -f "${SCRIPT_DIR}/${SCRIPT_NAME}" ] || exit 0
 exec bash "${SCRIPT_DIR}/${SCRIPT_NAME}" "$@"

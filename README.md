@@ -112,7 +112,7 @@ Every skill was written test-first:
 - **With the skill:** the skill was written against those failures, and the same scenarios ran again with the skill installed but never named, so the description also had to trigger it.
 - **Workflow runs:** with the whole plugin loaded, a few prompts check that each request reaches the right skill and that small edits stay small.
 
-The records are in [`tests/scenarios/`](tests/scenarios/). The HTML adapter ran with real renders (headless Chrome), and the Paper adapter ran against the Paper MCP. **The Figma adapter hasn't been tested yet**: reports and fixes are welcome.
+The records are in [`tests/scenarios/`](tests/scenarios/). The HTML adapter ran with real renders (headless Chrome), and the Paper adapters of the four original skills (`screen-states`, `three-proposals`, `design-system`, `design-critique`) ran against the Paper MCP; the `design` and `design-setup` Paper adapters haven't run yet. **The Figma adapter hasn't been tested yet**: reports and fixes are welcome.
 
 ## Credits
 

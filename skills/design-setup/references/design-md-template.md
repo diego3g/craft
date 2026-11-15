@@ -5,6 +5,8 @@ Write this file at the project root. Keep each section short: it's read at the s
 ```markdown
 # DESIGN.md · <product name>
 
+> If this file and the code disagree, the code wins until the person decides. Note the conflict under Open questions.
+
 ## Product
 <What it is, who uses it, where (devices), and the one job of the most-used screen.>
 Example: Booking web app for a small yoga studio. Members book classes and buy packs on their phones;
