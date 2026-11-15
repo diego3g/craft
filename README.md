@@ -94,14 +94,20 @@ With a tool that has no adapter, the agent does the same verbs in that tool and 
 
 ## Install
 
-**Claude Code (plugin, recommended).** Gives you the session-start routing:
+**Claude Code (plugin, recommended).** Gives you the session-start routing. Inside a session:
 
 ```
 /plugin marketplace add diego3g/craft
 /plugin install craft@craft
 ```
 
-**Other agents (Codex, Cursor and others).** Copy the folders from `skills/` into your project's `.agents/skills/` (or `.claude/skills/`). Without a session-start hook, add this to your `AGENTS.md` so the routing still happens:
+Or from your shell: `claude plugin marketplace add diego3g/craft && claude plugin install craft@craft`. Update later with `claude plugin update craft@craft`.
+
+**Claude Desktop and claude.ai.** Customize › Plugins › Add › Add marketplace, then enter `diego3g/craft`. In chat the session-start hook doesn't run, so the skills start from their own descriptions.
+
+**Skills only, any agent (Codex, Cursor, Copilot, Gemini CLI and others):** `npx skills add diego3g/craft` or `gh skill install diego3g/craft`. These install the skills but not the session-start hook, so also add the routing below to your `AGENTS.md`.
+
+**By hand.** Copy the folders from `skills/` into your project's `.agents/skills/` (or `.claude/skills/`). Without a session-start hook, add this to your `AGENTS.md` so the routing still happens:
 
 ```markdown
 ## Design skills
