@@ -1,9 +1,9 @@
 ---
-name: make
-description: Use when asked to design, create, mock up or redesign one or more pages, screens, flows or UI elements, or when the person runs /craft:make.
+name: craft
+description: Use when asked to design, create, mock up or redesign one or more pages, screens, flows or UI elements, or when the person runs /craft (/craft:craft in the Claude Code plugin).
 ---
 
-# Make
+# Craft
 
 ## Overview
 
@@ -11,7 +11,7 @@ The front door for making anything visual. It turns "design the pricing page" in
 
 ## When to use
 
-- "Design / create / mock up / redesign the <page, screen, flow, element>", `/craft:make`.
+- "Design / create / mock up / redesign the <page, screen, flow, element>", `/craft` (`/craft:craft` in the Claude Code plugin).
 - Several pages at once ("design the onboarding: welcome, sign-up, verify").
 
 ## When NOT to use

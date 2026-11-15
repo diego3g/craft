@@ -63,8 +63,8 @@ These agents don't run the session-start hook. Paste the routing below into your
 ## Design skills
 Before responding to anything that designs, reviews or changes a UI, check this table and use the skill (craft:<name> is the skill folder <name> copied from craft).
 First look whether DESIGN.md exists at the project root.
-- No DESIGN.md and a design task → craft:setup, then craft:make
-- Design / create / redesign a page, screen, flow or element → craft:make
+- No DESIGN.md and a design task → craft:setup, then craft:craft
+- Design / create / redesign a page, screen, flow or element → craft:craft
 - "Options", "alternatives", "I don't like it" → craft:explore
 - "Review", "refine", "make it better", or before showing your own design → craft:critique
 - Tokens, style guide, a component, "audit" → craft:system
@@ -82,25 +82,25 @@ A stop means ending your turn with the question. Never decide a stop for the per
 
 | Skill | What it does |
 |---|---|
-| **`craft:setup`** | Interviews you one question at a time: product, audience and voice, mood, brand, references, constraints. It then writes `DESIGN.md` and builds the foundations (tokens and base components). |
-| **`craft:make`** | The main command, for designing a page, screen, flow or element. It confirms the scope, then for each screen lists the states, draws with your system's pieces and checks the result. |
-| **`craft:states`** | Lists every state a screen can be in (empty, loading, error, long content, permissions, offline…) using realistic messy data, then draws and names each one. |
-| **`craft:explore`** | Draws three directions that really differ in structure, interaction or density, never just new colours. They sit next to the current design, with a recommendation first. |
-| **`craft:system`** | Looks after the design system: role-named tokens, interaction rules defined once, a states matrix per component, and a component index. Before a change spreads, it lists the screens the change affects. |
-| **`craft:sync`** | Brings a design system that already lives in code into your design tool. Later it sends the guide's changes back to the code as a reviewed diff. |
-| **`craft:critique`** | Renders the design and looks at it, then checks hierarchy, spacing, contrast, text, consistency and motion. Findings are ranked by impact. In review mode it changes nothing. |
+| **`setup`** | Interviews you one question at a time: product, audience and voice, mood, brand, references, constraints. It then writes `DESIGN.md` and builds the foundations (tokens and base components). |
+| **`craft`** | The main command, for designing a page, screen, flow or element. It confirms the scope, then for each screen lists the states, draws with your system's pieces and checks the result. |
+| **`states`** | Lists every state a screen can be in (empty, loading, error, long content, permissions, offline…) using realistic messy data, then draws and names each one. |
+| **`explore`** | Draws three directions that really differ in structure, interaction or density, never just new colours. They sit next to the current design, with a recommendation first. |
+| **`system`** | Looks after the design system: role-named tokens, interaction rules defined once, a states matrix per component, and a component index. Before a change spreads, it lists the screens the change affects. |
+| **`sync`** | Brings a design system that already lives in code into your design tool. Later it sends the guide's changes back to the code as a reviewed diff. |
+| **`critique`** | Renders the design and looks at it, then checks hierarchy, spacing, contrast, text, consistency and motion. Findings are ranked by impact. In review mode it changes nothing. |
 
 The hidden `using-craft` skill does the routing: it sends each request to the right skill.
 
-In Claude Code every skill is also a slash command: `/craft:make`, `/craft:setup`, and so on. In other agents, just ask in plain words.
+In Claude Code each skill is also a slash command: `/craft`, `/setup`, `/explore`… when installed with `npx skills`, or `/craft:craft`, `/craft:setup`… with the plugin. In any agent you can also just ask in plain words.
 
 ## The best workflow
 
-1. **Start with the brief.** Run `craft:setup` once per project. It writes `DESIGN.md`, which every other skill reads first. If your repo already has a component library or token files, setup offers `craft:sync` instead, so nothing gets invented twice.
-2. **Design with `craft:make`.** Describe what you need ("a settings page with billing and team"). It stops to confirm the scope and the list of states, then draws.
-3. **Unsure about the direction?** Say "give me options" and `craft:explore` draws three directions. Pick one, or mix two.
-4. **Review before you ship.** Say "review this" for a `craft:critique` report. `craft:make` already runs this check on its own work before showing it.
-5. **Keep the system healthy.** Ask for "an audit" from time to time (`craft:system`). After changing the guide in your design tool, say "apply the guide changes to the code" (`craft:sync`).
+1. **Start with the brief.** Run `/setup` once per project. It writes `DESIGN.md`, which every other skill reads first. If your repo already has a component library or token files, setup offers `sync` instead, so nothing gets invented twice.
+2. **Design with `/craft`.** Describe what you need ("a settings page with billing and team"). It stops to confirm the scope and the list of states, then draws.
+3. **Unsure about the direction?** Say "give me options" and `explore` draws three directions. Pick one, or mix two.
+4. **Review before you ship.** Say "review this" for a `critique` report. `/craft` already runs this check on its own work before showing it.
+5. **Keep the system healthy.** Ask for "an audit" from time to time (`system`). After changing the guide in your design tool, say "apply the guide changes to the code" (`sync`).
 
 Small edits ("make the button 2px taller") skip all of this: the agent makes the change, and says so when it touches a shared piece.
 

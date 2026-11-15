@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "craft",
-      "description": "A design workflow that starts by itself: setup interview, /craft:make, states, options, design system and self-critique.",
+      "description": "A design workflow that starts by itself: setup interview, /craft:craft, states, options, design system and self-critique.",
       "source": "./",
       "category": "design"
     }

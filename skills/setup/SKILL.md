@@ -16,7 +16,7 @@ Before the first screen, agree on what the product is, who it's for, how it shou
 
 ## When NOT to use
 
-- `DESIGN.md` exists and the task is a design: use `craft:make`.
+- `DESIGN.md` exists and the task is a design: use `craft:craft`.
 - Changing one token or one guideline: use `craft:system`.
 
 ## Steps
@@ -44,7 +44,7 @@ Don't keep asking. Write a minimal `DESIGN.md` from what you read and what they 
 
 Say in one line which assumptions matter most. "Skip" waives the interview and the brief's approval stop, never step 6:
 - **design system in code** → still ask the one import question ("Import it into <tool> now? I'll show what's there and you pick the components"), then continue;
-- **no tokens yet** → the foundations step and its stop still run, because `craft:make` can only draw with system pieces.
+- **no tokens yet** → the foundations step and its stop still run, because `craft:craft` can only draw with system pieces.
 
 Then continue with the task they asked for.
 
@@ -63,7 +63,7 @@ Then continue with the task they asked for.
 | References always come with take/avoid | "I like Stripe" is useless; "take the calm spacing, avoid the gradients" is a rule |
 | "Never like" is asked explicitly | What to avoid narrows the design faster than what to aim for |
 | Don't redesign existing files during setup | Setup records decisions; changing their CSS is a design task they didn't ask for yet |
-| No screens during setup | Screens come from `craft:make`, after the brief and foundations are approved |
+| No screens during setup | Screens come from `craft:craft`, after the brief and foundations are approved |
 
 ## Done when
 
@@ -74,7 +74,7 @@ Then continue with the task they asked for.
 | Thought | Reality |
 |---|---|
 | "I'll pick a nice palette and fonts, they can change it" | They can't change what they didn't know was decided. Ask, or mark it "(assumed)". |
-| "While I'm here I'll mock the main screens" | That's `craft:make`'s job, after approval. Setup ends at the brief and foundations. |
+| "While I'm here I'll mock the main screens" | That's `craft:craft`'s job, after approval. Setup ends at the brief and foundations. |
 | "Let me ask all six questions at once to save time" | One per message, with options. It's faster for them to answer. |
 | "Their tokens are messy, I'll restructure them" | Extend them. Restructuring is a separate, approved change. |
 | "No references given, I'll skip that section" | Ask for them. If they have none, offer three that fit the mood and ask what to take and avoid from each. |

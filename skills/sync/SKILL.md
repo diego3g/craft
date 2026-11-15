@@ -15,7 +15,7 @@ A small file at the project root, **`design-sync.json`**, remembers what was las
 
 ## When to use
 
-- A design task is about to start in a project with a design system in code and no guide in the tool. `craft:setup` and `craft:make` hand off to this.
+- A design task is about to start in a project with a design system in code and no guide in the tool. `craft:setup` and `craft:craft` hand off to this.
 - "Import / bring our design system (tokens, components) into Paper / Figma / the design tool."
 - "Apply / push / sync the guide's changes to the code."
 
@@ -66,9 +66,9 @@ A small file at the project root, **`design-sync.json`**, remembers what was las
 5. **Record:**
    - write `design-sync.json` (all token values now equal on both sides, plus component statuses);
    - in `DESIGN.md`, Brand gets "Design system source: `<path>`; the <tool> guide mirrors it", and the Decisions log gets a dated import line;
-   - if there's no `DESIGN.md`, create one whose first line is `<!-- sync record only: run craft:setup for the brief -->` with just Brand and the Decisions log. `craft:make` treats a `DESIGN.md` without a Product section as missing.
+   - if there's no `DESIGN.md`, create one whose first line is `<!-- sync record only: run craft:setup for the brief -->` with just Brand and the Decisions log. `craft:craft` treats a `DESIGN.md` without a Product section as missing.
 
-### Import of one component (from `craft:make`)
+### Import of one component (from `craft:craft`)
 
 The person already agreed to mirror the system, so there's no inventory stop:
 - draw that component;

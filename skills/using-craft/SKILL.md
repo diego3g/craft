@@ -15,7 +15,7 @@ A design skill that applies is not optional. Small edits are the only exception 
 
 ## How
 
-1. Check the routing table below. The one thing to look at first is whether `DESIGN.md` exists at the project root; it decides between `craft:setup` and `craft:make`. Don't guess it.
+1. Check the routing table below. The one thing to look at first is whether `DESIGN.md` exists at the project root; it decides between `craft:setup` and `craft:craft`. Don't guess it.
 2. Invoke the skill with your Skill tool, and announce: "Using <skill> to <purpose>."
 3. Follow it exactly, including its stops for the person's approval. A stop means ending your turn with the question, which is always possible, even in a headless or one-shot session. Never decide a stop for the person.
 
@@ -23,8 +23,8 @@ A design skill that applies is not optional. Small edits are the only exception 
 
 | The situation | Skill |
 |---|---|
-| Any request to design, create, mock up or redesign a page, screen, flow or element | `craft:make` |
-| A design task in a project with **no `DESIGN.md`** at its root | `craft:setup` first (it offers to import a design system already in code), then `craft:make` |
+| Any request to design, create, mock up or redesign a page, screen, flow or element | `craft:craft` |
+| A design task in a project with **no `DESIGN.md`** at its root | `craft:setup` first (it offers to import a design system already in code), then `craft:craft` |
 | "Set up the design", "define our style / brand / guidelines" | `craft:setup` |
 | "Options", "alternatives", "other directions", "I don't like it", "rethink this" | `craft:explore` |
 | "Review", "refine", "polish", "make it better", "feels off", or you are about to show your own design | `craft:critique` |
@@ -32,12 +32,12 @@ A design skill that applies is not optional. Small edits are the only exception 
 | "Import / bring our design system, tokens or components into <tool>"; "apply / push / sync the guide's changes to the code" | `craft:sync` |
 | "What states are missing?", "is this ready for dev?" | `craft:states` |
 
-A reusable piece for the system ("we need a date picker component") goes to `craft:system`; something on a specific page goes to `craft:make`. These are this plugin's skills (`craft:<name>` in Claude Code); prefer them over same-named skills from elsewhere.
+A reusable piece for the system ("we need a date picker component") goes to `craft:system`; something on a specific page goes to `craft:craft`. These are this plugin's skills (`craft:<name>` in Claude Code); prefer them over same-named skills from elsewhere.
 
 ## Priority
 
-1. `craft:setup` before `craft:make` when there is no `DESIGN.md`. Reviews, options for an existing screen, audits and state questions don't need a brief: they work from what's already there.
-2. `craft:make` before its sub-skills: it calls `craft:states`, `craft:explore`, `craft:system`, `craft:sync` and `craft:critique` at the right moment, so don't start them yourself in the middle of a `craft:make` run.
+1. `craft:setup` before `craft:craft` when there is no `DESIGN.md`. Reviews, options for an existing screen, audits and state questions don't need a brief: they work from what's already there.
+2. `craft:craft` before its sub-skills: it calls `craft:states`, `craft:explore`, `craft:system`, `craft:sync` and `craft:critique` at the right moment, so don't start them yourself in the middle of a `craft:craft` run.
 3. `craft:critique` is the last step before you show anything you made.
 
 ## Small edits: no process
@@ -51,7 +51,7 @@ A change the person described exactly (one value, one label, one element's size,
 
 | Thought | Reality |
 |---|---|
-| "It's just a quick mockup, I'll skip the process" | A quick mockup is still a design. The states list takes a minute. Use `craft:make`. |
+| "It's just a quick mockup, I'll skip the process" | A quick mockup is still a design. The states list takes a minute. Use `craft:craft`. |
 | "There's no `DESIGN.md`, but the request is clear enough" | Without a brief, every screen invents its own style. `craft:setup` first; the person can say "skip". |
 | "I'll draw it now and review it later" | Showing unreviewed work trains the person to do your review. `craft:critique` runs before you show. |
 | "I know which states it needs" | You know the happy path. `craft:states` lists the rest. |

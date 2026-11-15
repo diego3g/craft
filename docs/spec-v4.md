@@ -19,3 +19,7 @@ Claude already has commands with "design" in the name (Claude Design), so the pr
 Kept: `DESIGN.md` and `design-sync.json` (files in the person's project, not commands).
 The older specs and the test records in `tests/scenarios/` keep the old names as they were written.
 Private check settings moved too: `CRAFT_DENYLIST`, `CRAFT_PRIVATE_TOKENS`, `~/.config/craft/`.
+
+## 0.5.0: `make` becomes `craft`
+
+The main skill's folder and name are now `craft`, matching the package: `/craft` when installed with `npx skills` (skills keep their plain names there), `/craft:craft` in the Claude Code plugin. The other skills keep their names.

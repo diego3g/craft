@@ -47,6 +47,6 @@ Example: - Are cancellations free up to 3 hours before class? (assumed)
 
 ## Rules for keeping it alive
 
-- `craft:make` appends to the **Decisions log** after each task, with a date and the why.
+- `craft:craft` appends to the **Decisions log** after each task, with a date and the why.
 - When the code and the brief disagree, the code wins until the person decides. Note the conflict under Open questions.
 - Move an Open question into its section once it's answered.
