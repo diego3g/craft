@@ -16,7 +16,7 @@ Needs the pen.dev app (or its editor extension) running with the document open, 
 | Look at it | End the `execute` that finishes a section with `TakeScreenshot([<section id>])`, the smallest node that shows it. For structure, prefer a visitor: `Get(board, (n, c) => c.problems && Print(n.name, c.problems))` |
 | Fix clipping | Give the board `height: "fit_content"` (it needs `layout`); check `ctx.problems` again. Don't guess heights |
 | Temporary exploration area | pen.dev has no pages: a top-level frame named `Exploration · <topic>` below the screens, holding the comparison board and the options. `Delete` works, but delete it only when the person says so |
-| Finish | `Update(<board>, {placeholder: false})` on each board as soon as it's done, not at the end. `Get(n => n.placeholder && Print(n.name))` should list none of yours. At the end, `save` the document (or ask the person to save): pen.dev writes the `.pen` file only on save |
+| Finish | `Update(<board>, {placeholder: false})` on each board as soon as it's done, not at the end. `Get(n => n.placeholder && Print(n.name))` should list none of yours. At the end, call `save` if your pen.dev has it, or ask the person to save (Cmd/Ctrl+S): pen.dev writes the `.pen` file only on save |
 
 Notes:
 - `execute` errors roll the whole call back. Fix a failed call with its `edits` and `editId`; never resend the snippet. Fix returned warnings in the next call.

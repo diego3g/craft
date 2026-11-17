@@ -10,7 +10,7 @@ Needs the pen.dev app (or its editor extension) running with the document open, 
 | Read what exists | In one `execute`: `Print(GetVariables())` for tokens; list the top-level frames by name with a `Get` visitor (`ctx.skipChildren()` keeps it short); `Get(n => n.reusable && Print(n.id, n.name))` for components; `Get(id, {resolveVariables: true})` for exact values |
 | References board (optional) | A top-level frame `References` (at `FindEmptySpace`), holding one frame per reference named `Reference · <name>`: its image (if the person shared one) and two short lists, **Take** and **Avoid**. An image is an image fill, `fill: {type: "image", url: "./<file>"}`, with the file copied next to the `.pen` file; never make up an image URL |
 | Look at it | `TakeScreenshot([<board id>])` after building the board |
-| Finish | `Update(<board>, {placeholder: false})` if you set it while building. At the end, `save` the document (or ask the person to save): pen.dev writes the `.pen` file only on save |
+| Finish | `Update(<board>, {placeholder: false})` if you set it while building. At the end, call `save` if your pen.dev has it, or ask the person to save (Cmd/Ctrl+S): pen.dev writes the `.pen` file only on save |
 
 Notes:
 - Every text needs a `fill`, or it's invisible. Give every node a `name`.
