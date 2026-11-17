@@ -4,7 +4,7 @@
 
 <p align="center">
   <b>Design skills for AI agents.</b> Complete screens with every state, and a design system that stays consistent.<br>
-  Works with Paper, Figma or plain HTML, in Claude Code, Codex, OpenCode, Cursor and other agents.
+  Works with Paper, pen.dev, Figma or plain HTML, in Claude Code, Codex, OpenCode, Cursor and other agents.
 </p>
 
 <p align="center">
@@ -121,7 +121,7 @@ Small edits ("make the button 2px taller") skip all of this: the agent makes the
   - make every colour a token;
   - use one icon set;
   - change design and code together.
-- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), Figma (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter hasn't been tested yet, so reports are welcome.
+- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP) or plain HTML. Plain HTML is also the fallback. The pen.dev and Figma adapters haven't been tested in real runs yet, so reports are welcome.
 
 ## Contributing
 

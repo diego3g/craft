@@ -53,6 +53,17 @@ test('tool API names outside adapters fail, inside adapters pass', () => {
   assert.match(p[0], /get_jsx/); assert.match(p[0], /get_basic_info/);
 });
 
+test('pen.dev API names outside adapters fail, inside a pen.md adapter pass', () => {
+  const { dir } = skill({
+    'SKILL.md': fm() + 'Run read_skill, then Print(GetVariables()) and TakeScreenshot.\n',
+    'references/adapters/pen.md': 'get_app_state, read_skill, SetVariables, FindEmptySpace\n',
+    ...adapters,
+  });
+  const p = checkSkill(dir).filter((x) => x.includes('tool API name'));
+  assert.equal(p.length, 1);
+  assert.match(p[0], /SKILL\.md/); assert.match(p[0], /read_skill/); assert.match(p[0], /GetVariables/); assert.match(p[0], /TakeScreenshot/);
+});
+
 test('a file named like adapters but outside the folder is not exempt', () => {
   const { dir } = skill({ 'SKILL.md': fm(), 'references/adapters-x.md': 'get_tokens\n', ...adapters });
   assert.match(checkSkill(dir).join('\n'), /adapters-x\.md: tool API name/);
