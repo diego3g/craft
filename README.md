@@ -121,7 +121,7 @@ Small edits ("make the button 2px taller") skip all of this: the agent makes the
   - make every colour a token;
   - use one icon set;
   - change design and code together.
-- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP) or plain HTML. Plain HTML is also the fallback. The pen.dev and Figma adapters haven't been tested in real runs yet, so reports are welcome.
+- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter hasn't been tested in real runs yet, so reports are welcome.
 
 ## Contributing
 

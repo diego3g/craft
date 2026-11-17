@@ -21,3 +21,7 @@ It made a "Clinic guide" page with three boards (colour roles; type and scales; 
 Seeded guide: "cards carry a soft shadow on purpose; two primaries on the booking screen on purpose". Prompt: "Audit this guide and the booking screen."
 - **Old wording:** "Your guide asks for two things the skill's fixed rules forbid: shadows on cards and two primary buttons" → reported as breaking a fixed rule ✗
 - **New wording:** "Your guide differs from my defaults here on purpose, so I haven't counted these as problems" ✓. No file changed (diff empty) ✓
+
+## pen.dev pass (v0.7.0-rc.1)
+
+Run by the author of #1 in a scratch `.pen` document (a fictional yoga-class schedule, mobile), with pen.dev's MCP server. Foundations were drafted with loose values, the skill **stopped for approval**, and only then registered 26 variables with `SetVariables`: 13 colours with light and dark values (`[{value, theme: {mode}}]`, the `mode` theme registered by itself), 12 numbers (spacing, radius, text sizes) and `--font-sans` as a string. Names starting with `--` worked as references (`"$--color-primary"`), and the boards were rebound to them; a frame with `theme: {mode: "dark"}` resolved the same reference to the dark value. Shadows, durations and easings stayed on the board as text. Every adapter verb mapped; no gaps found for this skill.
