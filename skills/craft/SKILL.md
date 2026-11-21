@@ -25,7 +25,7 @@ The front door for making anything visual. It turns "design the pricing page" in
 
 ## Stops are real
 
-A **stop** means: end your turn with the question and wait. You can always do that, even in a one-shot or headless session, where your final message *is* the question. **Never decide a stop for the person because the session "can't wait" or "to save a round trip".** Deciding it yourself turns a five-second answer into hours of redoing.
+A **stop** means: ask the question and wait for the answer. Ask through your agent's question tool when it has one (see `using-craft` › Asking the person); otherwise end your turn with the question. You can always do that, even in a one-shot or headless session, where your final message *is* the question. **Never decide a stop for the person because the session "can't wait" or "to save a round trip".** Deciding it yourself turns a five-second answer into hours of redoing.
 
 ## Steps
 
@@ -83,5 +83,5 @@ Every item in the confirmed scope has its states drawn and self-checked, any sys
 | "The brief says teal, so I'll override the blue in this page's CSS" | Code wins. Flag the conflict and ask; never patch tokens locally. |
 | "I'll show it, they'll tell me what's wrong" | Run `craft-critique` in self-check first, and say what it fixed. |
 | "The decisions are in my message, that's enough" | Messages scroll away. Append them to `DESIGN.md`. |
-| "This session can't stop for answers, so I'll make the calls myself and list them" | Ending your turn with the question *is* stopping. Do that; build nothing past the first open stop. |
+| "This session can't stop for answers, so I'll make the calls myself and list them" | Asking the question, with your agent's question tool or by ending your turn with it, *is* stopping. Do that; build nothing past the first open stop. |
 | "To save a round trip I'll put both stops in one message" | Fine, if you then stop. Ask both, build nothing, wait. |
