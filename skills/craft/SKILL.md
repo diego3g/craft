@@ -25,7 +25,7 @@ The front door for making anything visual. It turns "design the pricing page" in
 
 ## Stops are real
 
-A **stop** means: ask the question and wait for the answer. Ask through your agent's question tool when it has one (see `using-craft` › Asking the person); otherwise end your turn with the question. You can always do that, even in a one-shot or headless session, where your final message *is* the question. **Never decide a stop for the person because the session "can't wait" or "to save a round trip".** Deciding it yourself turns a five-second answer into hours of redoing.
+A **stop** means: ask the question and wait for the answer, through your agent's question tool when it has one, otherwise by ending your turn with the question. Ending your turn is always possible, even in a one-shot or headless session, where your final message *is* the question. **Never decide a stop for the person because the session "can't wait" or "to save a round trip".** Deciding it yourself turns a five-second answer into hours of redoing.
 
 ## Steps
 

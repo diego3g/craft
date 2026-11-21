@@ -1,6 +1,6 @@
 # The interview
 
-One question per message, or per call when your agent has a question tool (the options become its choices). Offer options when you can, and always allow "something else". Skip what the files already answered and say so in a line instead. The examples are for an invented yoga studio.
+One question per message. Offer options when you can, and always allow "something else". Skip what the files already answered and say so in a line instead. The examples are for an invented yoga studio.
 
 ## 1. Product
 

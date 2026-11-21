@@ -21,14 +21,15 @@ A design skill that applies is not optional. Small edits are the only exception 
 
 ## Asking the person
 
-When your agent has a tool that asks the person a question with choices (AskUserQuestion in Claude Code, for example), every craft question goes through it: interview questions, stops and choices between options.
+When your agent has a tool that asks the person a question with choices, craft's questions go through it: interview questions, stops and picks between options. Choices in a dialog are quicker to answer than options read in chat.
 
-- One question per call, the way the skills say one per message. Two stops may share a call, as they may share a message.
-- The options the skill offers become the tool's choices, your recommendation first. "Something else" is the tool's own free-text answer.
+- Interview questions go one per call, the way the skills say one per message. Two stops may share a call, as they may share a message.
+- The options the skill offers become the tool's choices, your recommendation first. Leave out "something else" when the tool has its own free-text answer. More options than the tool takes: keep the ones that fit this project best.
+- A question with nothing to choose from (which products they like) is asked in plain text. Invented choices steer the answer.
 - The question stands on its own: name what it is about, because the person may see only the dialog.
-- Something long to approve (a `DESIGN.md` draft, a states list) stays in your message or the file. The tool asks for the yes.
+- Something long to approve (a `DESIGN.md` draft, a states list) is shown in your message first. The tool only asks for the yes.
 
-Without such a tool, or in a headless session, ask in plain text and end your turn.
+Without such a tool, or when the call fails (as in a headless session), ask in plain text and end your turn.
 
 ## Routing table
 
