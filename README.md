@@ -77,7 +77,7 @@ First look whether DESIGN.md exists at the project root.
 - "Bring our design system into <tool>", "apply the guide changes to the code" → craft-sync
 - "What states are missing?" → craft-states
 Small edits the person described exactly (one value, label or size): just make them.
-A stop means ending your turn with the question. Never decide a stop for the person.
+A stop means asking the question and waiting: through your agent's question tool when it has one, otherwise by ending your turn with it. Never decide a stop for the person.
 ```
 
 </details>

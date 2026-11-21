@@ -24,6 +24,7 @@ Before the first screen, agree on what the product is, who it's for, how it shou
 1. **Read first.** README, docs, existing CSS or tokens, the design file, brand folders, any old `DESIGN.md` draft. Write down what they already answer. **If the code already has a design system** (a UI package, token files, a component library), say so with counts, and write "Design system source: `<path>`" into the brief's Brand section. In step 6, offer to import it into the design tool instead of creating foundations; the brand questions it answers are skipped. **Two UI packages** → ask which is the source before skipping any brand question. **Never ask a question these files answer.** Confirm it in one line instead ("Your README says pt-BR only and members over 60, so I'll design for 18px text and 48px taps").
 2. **Interview, one question per message.** Follow [the interview](references/interview.md) in its order: product, audience and voice, mood, brand, references, constraints.
    - Offer 3–5 options plus "something else" whenever you can.
+   - If your agent has a question tool (one that asks with choices), a question with options goes through it, one per call: the options become its choices.
    - Skip any question already answered.
    - Stop when the answers are enough to design the first screen. Six good answers beat fifteen.
 3. **References are required.** Ask for 2–5 products, sites or images they like. For each one, ask **what to take and what to avoid**. If it's a link or an image you can open, look at it and say what you see before asking.
