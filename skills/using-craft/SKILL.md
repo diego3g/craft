@@ -17,7 +17,18 @@ A design skill that applies is not optional. Small edits are the only exception 
 
 1. Check the routing table below. The one thing to look at first is whether `DESIGN.md` exists at the project root; it decides between `craft-setup` and `craft`. Don't guess it.
 2. Invoke the skill with your Skill tool, and announce: "Using <skill> to <purpose>."
-3. Follow it exactly, including its stops for the person's approval. A stop means ending your turn with the question, which is always possible, even in a headless or one-shot session. Never decide a stop for the person.
+3. Follow it exactly, including its stops for the person's approval. A stop means asking the question and waiting for the answer: through your agent's question tool when it has one (see below), otherwise by ending your turn with the question, which is always possible, even in a headless or one-shot session. Never decide a stop for the person.
+
+## Asking the person
+
+When your agent has a tool that asks the person a question with choices (AskUserQuestion in Claude Code, for example), every craft question goes through it: interview questions, stops and choices between options.
+
+- One question per call, the way the skills say one per message. Two stops may share a call, as they may share a message.
+- The options the skill offers become the tool's choices, your recommendation first. "Something else" is the tool's own free-text answer.
+- The question stands on its own: name what it is about, because the person may see only the dialog.
+- Something long to approve (a `DESIGN.md` draft, a states list) stays in your message or the file. The tool asks for the yes.
+
+Without such a tool, or in a headless session, ask in plain text and end your turn.
 
 ## Routing table
 
@@ -57,7 +68,7 @@ A change the person described exactly (one value, one label, one element's size,
 | "I know which states it needs" | You know the happy path. `craft-states` lists the rest. |
 | "Let me read the files first, then decide on a skill" | Skills tell you what to read. Decide first. |
 | "This is a small change" (to a new page) | A new page is never a small change. |
-| "The session can't wait for answers, so I'll decide and list my calls" | End your turn with the question. Deciding for them is the one thing the stops exist to prevent. |
+| "The session can't wait for answers, so I'll decide and list my calls" | Ask the question: with your agent's question tool, or by ending your turn with it. Deciding for them is the one thing the stops exist to prevent. |
 
 ## Other agents
 

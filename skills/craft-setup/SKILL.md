@@ -24,6 +24,7 @@ Before the first screen, agree on what the product is, who it's for, how it shou
 1. **Read first.** README, docs, existing CSS or tokens, the design file, brand folders, any old `DESIGN.md` draft. Write down what they already answer. **If the code already has a design system** (a UI package, token files, a component library), say so with counts, and write "Design system source: `<path>`" into the brief's Brand section. In step 6, offer to import it into the design tool instead of creating foundations; the brand questions it answers are skipped. **Two UI packages** → ask which is the source before skipping any brand question. **Never ask a question these files answer.** Confirm it in one line instead ("Your README says pt-BR only and members over 60, so I'll design for 18px text and 48px taps").
 2. **Interview, one question per message.** Follow [the interview](references/interview.md) in its order: product, audience and voice, mood, brand, references, constraints.
    - Offer 3–5 options plus "something else" whenever you can.
+   - If your agent has a tool for asking a question with choices, ask through it: the options become its choices.
    - Skip any question already answered.
    - Stop when the answers are enough to design the first screen. Six good answers beat fifteen.
 3. **References are required.** Ask for 2–5 products, sites or images they like. For each one, ask **what to take and what to avoid**. If it's a link or an image you can open, look at it and say what you see before asking.
@@ -57,7 +58,7 @@ Then continue with the task they asked for.
 
 | Rule | Why |
 |---|---|
-| One question per message, with options | A wall of questions gets skimmed and half-answered |
+| One question per message (or per question-tool call), with options | A wall of questions gets skimmed and half-answered |
 | Read before asking; never ask what the files say | Asking what's in the README tells them you didn't look |
 | No invented brand: colours, fonts and mood come from them or are marked "(assumed)" | An invented brand is a guess they have to undo screen by screen |
 | References always come with take/avoid | "I like Stripe" is useless; "take the calm spacing, avoid the gradients" is a rule |
@@ -75,6 +76,6 @@ Then continue with the task they asked for.
 |---|---|
 | "I'll pick a nice palette and fonts, they can change it" | They can't change what they didn't know was decided. Ask, or mark it "(assumed)". |
 | "While I'm here I'll mock the main screens" | That's `craft`'s job, after approval. Setup ends at the brief and foundations. |
-| "Let me ask all six questions at once to save time" | One per message, with options. It's faster for them to answer. |
+| "Let me ask all six questions at once to save time" | One per message or question-tool call, with options. It's faster for them to answer. |
 | "Their tokens are messy, I'll restructure them" | Extend them. Restructuring is a separate, approved change. |
 | "No references given, I'll skip that section" | Ask for them. If they have none, offer three that fit the mood and ask what to take and avoid from each. |
