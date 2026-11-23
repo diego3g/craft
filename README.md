@@ -4,7 +4,7 @@
 
 <p align="center">
   <b>Design skills for AI agents.</b> Complete screens with every state, and a design system that stays consistent.<br>
-  Works with Paper, pen.dev, Figma or plain HTML, in Claude Code, Codex, OpenCode, Cursor and other agents.
+  Works with Paper, pen.dev, Figma, Penpot or plain HTML, in Claude Code, Codex, OpenCode, Cursor and other agents.
 </p>
 
 <p align="center">
@@ -84,6 +84,10 @@ A stop means asking the question and waiting: through your agent's question tool
 
 **By hand:** copy the folders in `skills/` into your project's `.agents/skills/`, then add the routing above.
 
+### Use with Penpot
+
+Connect the Penpot MCP server to your agent with [Penpot's MCP setup](https://help.penpot.app/mcp/), open your design file and keep its tab connected. Then ask your agent to use Craft in Penpot.
+
 ## The skills
 
 | Skill | What it does |
@@ -121,7 +125,7 @@ Small edits ("make the button 2px taller") skip all of this: the agent makes the
   - make every colour a token;
   - use one icon set;
   - change design and code together.
-- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter hasn't been tested in real runs yet, so reports are welcome.
+- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP), Penpot (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter and Penpot's hosted OAuth sign-in haven't been tested in real runs yet, so reports are welcome.
 
 ## Contributing
 

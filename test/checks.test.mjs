@@ -64,6 +64,18 @@ test('pen.dev API names outside adapters fail, inside a pen.md adapter pass', ()
   assert.match(p[0], /SKILL\.md/); assert.match(p[0], /read_skill/); assert.match(p[0], /GetVariables/); assert.match(p[0], /TakeScreenshot/);
 });
 
+test('Penpot API names stay inside adapters', () => {
+  const tools = 'high_level_overview penpot_api_info execute_code export_shape import_image';
+  const { dir } = skill({
+    ...adapters,
+    'SKILL.md': fm() + tools + '\n',
+    'references/adapters/penpot.md': tools + '\n',
+  });
+  const problems = checkSkill(dir);
+  assert.equal(problems.length, 1);
+  assert.equal(problems[0], `demo-skill/SKILL.md: tool API name outside adapters: ${tools.split(' ').join(', ')}`);
+});
+
 test('a file named like adapters but outside the folder is not exempt', () => {
   const { dir } = skill({ 'SKILL.md': fm(), 'references/adapters-x.md': 'get_tokens\n', ...adapters });
   assert.match(checkSkill(dir).join('\n'), /adapters-x\.md: tool API name/);

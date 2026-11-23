@@ -1,6 +1,6 @@
 {
   "name": "craft",
-  "description": "Design workflow for AI agents: a setup interview and DESIGN.md brief, a /craft:craft front door, full state coverage, three-proposal comparisons, design systems and self-critique. Starts by itself; tool-agnostic (Paper, pen.dev, Figma, HTML).",
+  "description": "Design workflow for AI agents: a setup interview and DESIGN.md brief, a /craft:craft front door, full state coverage, three-proposal comparisons, design systems and self-critique. Starts by itself; tool-agnostic (Paper, pen.dev, Figma, Penpot, HTML).",
   "version": "0.7.0",
   "author": {
     "name": "Diego Fernandes",
@@ -17,6 +17,7 @@
     "critique",
     "paper",
     "figma",
+    "penpot",
     "skills"
   ]
 }

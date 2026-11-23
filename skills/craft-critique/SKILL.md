@@ -23,7 +23,7 @@ Critique the screen people will **see**, not the source you can read: render it 
 
 0. Read `DESIGN.md` at the project root if it exists: it is the project's design brief.
 1. Read the project's design system. **Where it differs from a default in the rules, the project wins.** Don't flag it as a defect; note the difference once.
-2. Pick your tool's adapter in `references/adapters/` (`paper.md`, `pen.md`, `figma.md`, `html.md`). If no adapter matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
+2. Pick your tool's adapter in `references/adapters/` (`paper.md`, `pen.md`, `figma.md`, `penpot.md`, `html.md`). If no adapter matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
 3. Decide the mode:
    - **review:** the person asks about a design ("review", "critique", "what's wrong"). Report only.
    - **refine:** the person asks to improve one ("refine", "polish", "fix it", "make it better").
