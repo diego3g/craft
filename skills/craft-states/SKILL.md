@@ -24,7 +24,7 @@ A screen is not designed until every state it can be in is designed. The happy p
 
 0. Read `DESIGN.md` at the project root if it exists: it is the project's design brief.
 1. Read the project's design system and existing screens. They win on look: reuse their empty state, banner and loading pieces instead of inventing new ones.
-2. Pick your tool's adapter in `references/adapters/` (`paper.md`, `pen.md`, `figma.md`, [Penpot](references/adapters/penpot.md), `html.md`). If no adapter matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
+2. Pick your tool's adapter in `references/adapters/` (`paper.md`, `pen.md`, `figma.md`, `penpot.md`, `html.md`). If no adapter matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
 3. Know the screen's job: who uses it, what they came to do, and what the one next action is.
 
 ## Steps

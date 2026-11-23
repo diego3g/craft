@@ -7,8 +7,6 @@ Use a scratch Penpot file connected to the official MCP. In the scratch code pro
 3. Ask `craft-explore` for alternate layouts of Orders. Expect a separate temporary page with Current and the alternatives. Pick one and verify that the temporary page is removed after the pick is applied.
 4. Change the accent token in Penpot and ask `craft-sync` to export. Expect a proposed diff against the source token file and an approval stop before the write.
 
-The packaging test in `test/checks.test.mjs` failed on the original Craft checkout because the workflows had no Penpot adapter. It passes with the seven adapters installed.
-
 A direct MCP smoke test on Penpot and MCP 2.19.1 verified page creation and activation, an editable Flex board, the `--color-accent` value and binding, the empty state clone, PNG export, linked component instances, native variants, and capture and cleanup of the temporary comparison page. The prompts above exercise the agent's workflow end to end.
 
 ## Craft workflow run

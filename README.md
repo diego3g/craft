@@ -86,15 +86,7 @@ A stop means asking the question and waiting: through your agent's question tool
 
 ### Use with Penpot
 
-1. Add the Penpot MCP server to your agent. With Penpot OAuth in Codex, run the commands below and complete the sign-in. For a self-hosted instance with OAuth, use its own MCP URL. Penpot also documents setup with an MCP key or a local server. [Official Penpot MCP setup](https://help.penpot.dev/mcp/#connect-your-mcp-client)
-
-   ```sh
-   codex mcp add penpot --url https://design.penpot.app/mcp/stream
-   codex mcp login penpot
-   ```
-
-2. Open your design file in Penpot, select **MCP → Connect**, and keep the tab open. For a local server, connect from the Penpot MCP plugin.
-3. Ask your agent to use Penpot with Craft. For example, “Use `craft-states` in Penpot to design the loading, empty and error states for Orders.” If you connected multiple files, include the target session ID where supported.
+Connect the Penpot MCP server to your agent with [Penpot's MCP setup](https://help.penpot.app/mcp/), open your design file and keep its tab connected. Then ask your agent to use Craft in Penpot.
 
 ## The skills
 
@@ -133,7 +125,7 @@ Small edits ("make the button 2px taller") skip all of this: the agent makes the
   - make every colour a token;
   - use one icon set;
   - change design and code together.
-- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP), Penpot (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter hasn't been tested in real runs yet, so reports are welcome.
+- **Tool-agnostic.** The skills describe actions ("create a board", "render and look"), and adapters map them to Paper (MCP), pen.dev (MCP), Figma (MCP), Penpot (MCP) or plain HTML. Plain HTML is also the fallback. The Figma adapter and Penpot's hosted OAuth sign-in haven't been tested in real runs yet, so reports are welcome.
 
 ## Contributing
 
