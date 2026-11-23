@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, resolve, dirname, sep } from 'node:path';
 
-const TOOL_NAMES = /\b(mcp__[a-z0-9_]+|get_jsx|write_html|duplicate_nodes|get_screenshot|update_styles|create_artboard|get_tree_summary|get_computed_styles|set_text_content|get_basic_info|get_tokens|create_tokens|set_tokens|get_guide|finish_working_on_nodes|get_font_family_info|use_figma|get_design_context|get_variable_defs|get_app_state|read_skill|get_style|GetVariables|SetVariables|FindEmptySpace|TakeScreenshot)\b/g;
+const TOOL_NAMES = /\b(mcp__[a-z0-9_]+|get_jsx|write_html|duplicate_nodes|get_screenshot|update_styles|create_artboard|get_tree_summary|get_computed_styles|set_text_content|get_basic_info|get_tokens|create_tokens|set_tokens|get_guide|finish_working_on_nodes|get_font_family_info|use_figma|get_design_context|get_variable_defs|get_app_state|read_skill|get_style|GetVariables|SetVariables|FindEmptySpace|TakeScreenshot|high_level_overview|penpot_api_info|execute_code|export_shape|import_image)\b/g;
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'scratch']);
 const LINE_LIMIT = 250;
 // The entry skill routes to other skills and never touches a design tool, so it has no adapters.

@@ -51,6 +51,7 @@ Then continue with the task they asked for.
 
 ## Before you start
 
+- Read the adapter for your design tool in `references/adapters/`. For Penpot, use [the Penpot adapter](references/adapters/penpot.md).
 - If no adapter in `references/adapters/` matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
 - `DESIGN.md` is a plain Markdown file in the repo in every tool. Only the optional references board lives in the design tool.
 

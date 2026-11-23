@@ -16,7 +16,7 @@ A small file at the project root, **`design-sync.json`**, remembers what was las
 ## When to use
 
 - A design task is about to start in a project with a design system in code and no guide in the tool. `craft-setup` and `craft` hand off to this.
-- "Import / bring our design system (tokens, components) into Paper / Figma / the design tool."
+- "Import / bring our design system (tokens, components) into Paper / Figma / Penpot / the design tool."
 - "Apply / push / sync the guide's changes to the code."
 
 ## When NOT to use
@@ -28,7 +28,7 @@ A small file at the project root, **`design-sync.json`**, remembers what was las
 ## Before you start
 
 0. Read `DESIGN.md` (Brand says where the system lives) and `design-sync.json` if they exist.
-1. Pick your tool's adapter in `references/adapters/` (`paper.md`, `pen.md`, `figma.md`, `html.md`). If no adapter matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
+1. Pick your tool's adapter in `references/adapters/` (`paper.md`, `pen.md`, `figma.md`, [Penpot](references/adapters/penpot.md), `html.md`). If no adapter matches your tool, do the same verbs in your tool and say which you mapped by hand. With no design tool at all, build in HTML (`html.md`). If an image is all you have, say that values read from it are estimates.
 
 ## `design-sync.json`
 

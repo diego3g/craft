@@ -1,9 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import { parseFrontmatter, checkSkill, scanDenylist, scanText, hexValues, sharedHex } from '../scripts/checks.mjs';
+import { basename, join, resolve } from 'node:path';
+import { parseFrontmatter, checkSkill, listSkills, scanDenylist, scanText, hexValues, sharedHex } from '../scripts/checks.mjs';
 
 function skill(files, name = 'demo-skill') {
   const root = mkdtempSync(join(tmpdir(), 'ds-'));
@@ -62,6 +62,27 @@ test('pen.dev API names outside adapters fail, inside a pen.md adapter pass', ()
   const p = checkSkill(dir).filter((x) => x.includes('tool API name'));
   assert.equal(p.length, 1);
   assert.match(p[0], /SKILL\.md/); assert.match(p[0], /read_skill/); assert.match(p[0], /GetVariables/); assert.match(p[0], /TakeScreenshot/);
+});
+
+test('Penpot API names stay inside adapters', () => {
+  const tools = 'high_level_overview penpot_api_info execute_code export_shape import_image';
+  const { dir } = skill({
+    ...adapters,
+    'SKILL.md': fm() + tools + '\n',
+    'references/adapters/penpot.md': tools + '\n',
+  });
+  const problems = checkSkill(dir);
+  assert.equal(problems.length, 1);
+  assert.equal(problems[0], `demo-skill/SKILL.md: tool API name outside adapters: ${tools.split(' ').join(', ')}`);
+});
+
+test('every design workflow links to its own packaged Penpot adapter', () => {
+  const root = resolve(import.meta.dirname, '..');
+  for (const dir of listSkills(root).filter((dir) => basename(dir) !== 'using-craft')) {
+    const entry = readFileSync(join(dir, 'SKILL.md'), 'utf8');
+    assert.match(entry, /\]\(references\/adapters\/penpot\.md\)/, basename(dir));
+    assert.deepEqual(checkSkill(dir), []);
+  }
 });
 
 test('a file named like adapters but outside the folder is not exempt', () => {
